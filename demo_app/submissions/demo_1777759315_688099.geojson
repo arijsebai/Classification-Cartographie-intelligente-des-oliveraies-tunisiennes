@@ -1,0 +1,40 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "job_id": "demo_1777759315_688099",
+        "status": "queued",
+        "created_at": "2026-05-02T22:01:55Z",
+        "area_km2": 40.595,
+        "area_ha": 4059.52,
+        "centroid_lat": 35.677818333333335,
+        "centroid_lng": 9.223022333333335
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              9.161224,
+              35.700868
+            ],
+            [
+              9.29306,
+              35.695293
+            ],
+            [
+              9.214783,
+              35.637294
+            ],
+            [
+              9.161224,
+              35.700868
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

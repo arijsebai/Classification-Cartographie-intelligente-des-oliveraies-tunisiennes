@@ -181,6 +181,16 @@ function styleSentinelFootprint() {
   };
 }
 
+function styleNewlyCachedPolygon(feature) {
+  // Newly cached polygons = yellow/orange color
+  return {
+    color: "#f59e0b",
+    fillColor: "#f59e0b",
+    fillOpacity: 0.4,
+    weight: 2.5,
+  };
+}
+
 function parcelPopup(feature) {
   const props = feature.properties || {};
   const predicted = props.model_prediction || "non disponible";
@@ -233,6 +243,33 @@ async function loadSentinelFootprints() {
     style: styleSentinelFootprint,
     interactive: false,
   }).addTo(map);
+}
+
+async function loadSessionCache() {
+  try {
+    const response = await fetch("/api/cache-list");
+    if (!response.ok) return;
+    
+    const cacheData = await response.json();
+    if (!cacheData.features || cacheData.features.length === 0) return;
+    
+    L.geoJSON(cacheData, {
+      style: styleNewlyCachedPolygon,
+      onEachFeature: (feature, layer) => {
+        const props = feature.properties || {};
+        const popup = `
+          <strong>${props.name || props.id}</strong><br>
+          <span style="background:#fbbf24;color:white;padding:2px 6px;border-radius:3px;font-size:11px;font-weight:bold;">✓ Nouvellement calculé</span><br>
+          Prédiction: <strong>${props.model_prediction || "—"}</strong><br>
+          Confiance: ${Math.round((props.confidence || 0) * 100)}%<br>
+          ${props.area_ha ? `${props.area_ha.toFixed(1)} ha` : ""}
+        `;
+        layer.bindPopup(popup);
+      },
+    }).addTo(map);
+  } catch (err) {
+    console.warn('Error loading session cache:', err);
+  }
 }
 
 async function loadModelSummary() {
@@ -339,6 +376,20 @@ async function analyzeLayer(layer) {
     `Polygone accepte: ${payload.area_ha} ha. Recherche d'image Sentinel-2 locale...`,
     "ok"
   );
+
+  // Add newly classified polygon to session cache
+  try {
+    const cacheResp = await fetch("/api/cache-add", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ geometry }),
+    });
+    if (cacheResp.ok) {
+      await loadSessionCache();  // reload to show newly cached polygon
+    }
+  } catch (e) {
+    console.warn('Error adding to cache:', e);
+  }
 
   await runAutomaticAnalysis();
 }
@@ -478,6 +529,7 @@ loadConfig()
   .then(loadModelSummary)
   .then(loadParcels)
   .then(loadSentinelFootprints)
+  .then(loadSessionCache)
   .catch((error) => {
     console.error(error);
     setStatus("Impossible de charger la demo.", "bad");

@@ -38,6 +38,7 @@ except ImportError:
 
 model = joblib.load(MODEL_PATH) if joblib is not None and MODEL_PATH.exists() else None
 openeo_processes: dict[str, subprocess.Popen] = {}
+session_cache: list[dict[str, Any]] = []  # In-memory cache for newly classified polygons
 
 
 class PolygonRequest(BaseModel):
@@ -854,6 +855,56 @@ def fast_analyze(payload: PolygonRequest) -> dict[str, Any]:
     }
 
     return {"found": True, "classification": prediction}
+
+
+@app.post("/api/cache-add")
+def cache_add(payload: PolygonRequest) -> dict[str, Any]:
+    """Register a newly classified polygon in the session cache."""
+    geometry = payload.geometry
+    area_m2 = polygon_area_m2(geometry)
+    area_ha = area_m2 / 10_000.0
+    
+    # Generate a unique ID for this cached polygon
+    cache_id = f"cached_{int(time.time() * 1000)}"
+    
+    # Quick classification via demo rules
+    cls = demo_classify(geometry, area_ha)
+    
+    # Store in session cache
+    cached_item = {
+        "id": cache_id,
+        "geometry": geometry,
+        "properties": {
+            "id": cache_id,
+            "name": f"Zone calculée {len(session_cache) + 1}",
+            "cultivation_system": cls.get("label"),
+            "model_prediction": cls.get("label"),
+            "prob_intensif": cls.get("prob_intensif"),
+            "area_ha": area_ha,
+            "model_source": "session_cache_new",
+            "confidence": cls.get("confidence"),
+            "cached_at": time.time(),
+        },
+        "type": "Feature",
+    }
+    session_cache.append(cached_item)
+    
+    return {
+        "cached": True,
+        "cache_id": cache_id,
+        "area_ha": round(area_ha, 2),
+        "classification": cls,
+    }
+
+
+@app.get("/api/cache-list")
+def cache_list() -> dict[str, Any]:
+    """Get all cached polygons from this session."""
+    return {
+        "type": "FeatureCollection",
+        "features": session_cache,
+        "cache_count": len(session_cache),
+    }
 
 
 @app.get("/api/sentinel-analysis/{job_id}")

@@ -19,3 +19,29 @@ Authenticated using refresh token.
 cdse-j-260502215218459499971f0a326a9a48 created demo__unknown__demo_1777758729_898992__2025__05_06__s2_l2a
 Exit code: 0
 If the job is not finished yet, the downloader skips it. Next check in 120 seconds.
+
+Download attempt 2/20
+
+$ C:\Users\Arij\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe scripts/download_openeo_results.py --manifest openeo_jobs_manifest_demo_1777758729_898992.json --output sentinel2_l2a/2025_05_06 --auth-method device --auth-timeout 1800 --no-browser
+Authenticated using refresh token.
+cdse-j-260502215218459499971f0a326a9a48 running demo__unknown__demo_1777758729_898992__2025__05_06__s2_l2a
+Exit code: 0
+If the job is not finished yet, the downloader skips it. Next check in 120 seconds.
+
+Download attempt 3/20
+
+$ C:\Users\Arij\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe scripts/download_openeo_results.py --manifest openeo_jobs_manifest_demo_1777758729_898992.json --output sentinel2_l2a/2025_05_06 --auth-method device --auth-timeout 1800 --no-browser
+Authenticated using refresh token.
+cdse-j-260502215218459499971f0a326a9a48 running demo__unknown__demo_1777758729_898992__2025__05_06__s2_l2a
+Exit code: 0
+If the job is not finished yet, the downloader skips it. Next check in 120 seconds.
+
+Download attempt 4/20
+
+$ C:\Users\Arij\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe scripts/download_openeo_results.py --manifest openeo_jobs_manifest_demo_1777758729_898992.json --output sentinel2_l2a/2025_05_06 --auth-method device --auth-timeout 1800 --no-browser
+Authenticated using refresh token.
+cdse-j-260502215218459499971f0a326a9a48 finished demo__unknown__demo_1777758729_898992__2025__05_06__s2_l2a
+Downloaded: sentinel2_l2a\2025_05_06\demo\unknown__demo_1777758729_898992.tif
+Exit code: 0
+Classification completed: {"label": "intensif", "confidence": 0.22, "prob_intensif": 0.22, "threshold_intensif": 0.2, "method": "local_sentinel2_random_forest", "image_path": "sentinel2_l2a\\2025_05_06\\demo\\unknown__demo_1777758729_898992.tif", "valid_pixel_count": 295983, "valid_pixel_ratio": 0.446, "note": "Prediction uses Sentinel-2 pixels from a local GeoTIFF and the trained Random Forest."}
+Workflow finished successfully.

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EZZAYRA Olive Mapping Demo</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section id="map" aria-label="Carte interactive des oliveraies tunisiennes"></section>
+      <aside class="panel">
+        <div class="brand">
+          <span class="mark"></span>
+          <div>
+            <h1>EZZAYRA Olive Map</h1>
+            <p>Démo dessin et qualification parcellaire</p>
+          </div>
+        </div>
+
+        <div class="metric-grid">
+          <div>
+            <span class="label">Surface</span>
+            <strong id="areaValue">0 ha</strong>
+          </div>
+          <div>
+            <span class="label">Limite</span>
+            <strong id="limitValue">100 km²</strong>
+          </div>
+        </div>
+
+        <div id="status" class="status neutral">Dessine un polygone sur la carte.</div>
+
+        <div class="legend">
+          <div><span class="swatch extensif"></span>Extensif</div>
+          <div><span class="swatch intensif"></span>Intensif</div>
+          <div><span class="swatch drawn"></span>Polygone dessiné</div>
+        </div>
+      </aside>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+    <script src="/static/app.js"></script>
+  </body>
+</html>

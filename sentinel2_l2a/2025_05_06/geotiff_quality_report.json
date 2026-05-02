@@ -1,0 +1,944 @@
+{
+  "root": "sentinel2_l2a\\2025_05_06",
+  "count": 49,
+  "by_split": {
+    "test": 7,
+    "train": 35,
+    "val": 7
+  },
+  "bad_band_count": [],
+  "empty_or_invalid": [],
+  "items": [
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666069829_t5ehp.tif",
+      "split": "test",
+      "bands": 5,
+      "width": 875,
+      "height": 715,
+      "crs": "EPSG:32632",
+      "bounds": [
+        614590.0,
+        3872460.0,
+        623340.0,
+        3879610.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.4774057942057942,
+      "min": -32768.0,
+      "max": 6643.0,
+      "mean": -15386.817934385614
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666572107_7pdad.tif",
+      "split": "test",
+      "bands": 5,
+      "width": 627,
+      "height": 301,
+      "crs": "EPSG:32632",
+      "bounds": [
+        602560.0,
+        3876730.0,
+        608830.0,
+        3879740.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.7643315476852809,
+      "min": -32768.0,
+      "max": 6733.0,
+      "mean": -4913.189013760617
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666591451_o64cz.tif",
+      "split": "test",
+      "bands": 5,
+      "width": 471,
+      "height": 328,
+      "crs": "EPSG:32632",
+      "bounds": [
+        600930.0,
+        3878840.0,
+        605640.0,
+        3882120.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.5116060794365905,
+      "min": -32768.0,
+      "max": 6539.0,
+      "mean": -14227.227141266636
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666608727_pm8wx.tif",
+      "split": "test",
+      "bands": 5,
+      "width": 232,
+      "height": 227,
+      "crs": "EPSG:32632",
+      "bounds": [
+        602210.0,
+        3875050.0,
+        604530.0,
+        3877320.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.6977441895792192,
+      "min": -32768.0,
+      "max": 6493.0,
+      "mean": -7517.589993164211
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\test\\intensif__parcel_1777662875975_5jz1b.tif",
+      "split": "test",
+      "bands": 5,
+      "width": 138,
+      "height": 190,
+      "crs": "EPSG:32632",
+      "bounds": [
+        563200.0,
+        3785320.0,
+        564580.0,
+        3787220.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.4034706331045004,
+      "min": -32768.0,
+      "max": 7070.0,
+      "mean": -17854.09522501907
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\test\\intensif__parcel_1777662889381_5q9ie.tif",
+      "split": "test",
+      "bands": 5,
+      "width": 88,
+      "height": 68,
+      "crs": "EPSG:32632",
+      "bounds": [
+        559640.0,
+        3784690.0,
+        560520.0,
+        3785370.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.28141711229946526,
+      "min": -32768.0,
+      "max": 6447.0,
+      "mean": -22482.455548128342
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\test\\intensif__parcel_1777666827849_immef.tif",
+      "split": "test",
+      "bands": 5,
+      "width": 339,
+      "height": 393,
+      "crs": "EPSG:32632",
+      "bounds": [
+        478100.0,
+        3834800.0,
+        481490.0,
+        3838730.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.46170070631328486,
+      "min": -32768.0,
+      "max": 5989.0,
+      "mean": -16353.056896875258
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\train\\extensif__parcel_1777665966157_egeq5.tif",
+      "split": "train",
+      "bands": 5,
+      "width": 134,
+      "height": 120,
+      "crs": "EPSG:32632",
+      "bounds": [
+        646360.0,
+        3905850.0,
+        647700.0,
+        3907050.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.5900497512437811,
+      "min": -32768.0,
+      "max": 6079.0,
+      "mean": -11645.775360696518
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\train\\extensif__parcel_1777666096636_lo0y0.tif",
+      "split": "train",
+      "bands": 5,
+      "width": 411,
+      "height": 210,
+      "crs": "EPSG:32632",
+      "bounds": [
+        626730.0,
+        3885140.0,
+        630840.0,
+        3887240.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.4282701888541305,
+      "min": -32768.0,
+      "max": 6394.0,
+      "mean": -17480.52643030935
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\train\\extensif__parcel_1777666127269_tb54q.tif",
+      "split": "train",
+      "bands": 5,
+      "width": 305,
+      "height": 350,
+      "crs": "EPSG:32632",
+      "bounds": [
+        626350.0,
+        3880800.0,
+        629400.0,
+        3884300.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.5197470725995316,
+      "min": -32768.0,
+      "max": 6321.0,
+      "mean": -13994.192487119439
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\train\\extensif__parcel_1777666170696_fk7cq.tif",
+      "split": "train",
+      "bands": 5,
+      "width": 625,
+      "height": 489,
+      "crs": "EPSG:32632",
+      "bounds": [
+        639120.0,
+        3876030.0,
+        645370.0,
+        3880920.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.5910936605316973,
+      "min": -32768.0,
+      "max": 6319.0,
+      "mean": -11625.57194993865
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\train\\extensif__parcel_1777666196106_hhim9.tif",
+      "split": "train",
+      "bands": 5,
+      "width": 214,
+      "height": 234,
+      "crs": "EPSG:32632",
+      "bounds": [
+        645640.0,
+        3876950.0,
+        647780.0,
+        3879290.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.3787443086508507,
+      "min": -32768.0,
+      "max": 6423.0,
+      "mean": -19089.662624810288
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\train\\extensif__parcel_1777666217906_3lfgs.tif",
+      "split": "train",
+      "bands": 5,
+      "width": 313,
+      "height": 141,
+      "crs": "EPSG:32632",
+      "bounds": [
+        645380.0,
+        3874420.0,
+        648510.0,
+        3875830.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.4870505064237645,
+      "min": -32768.0,
+      "max": 6245.0,
+      "mean": -15218.01519951057
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\train\\extensif__parcel_1777666232428_43q5u.tif",
+      "split": "train",
+      "bands": 5,
+      "width": 149,
+      "height": 137,
+      "crs": "EPSG:32632",
+      "bounds": [
+        648710.0,
+        3874370.0,
+        650200.0,
+        3875740.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.5773281732229462,
+      "min": -32768.0,
+      "max": 6204.0,
+      "mean": -12079.747984127762
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\train\\extensif__parcel_1777666247763_3i29v.tif",
+      "split": "train",
+      "bands": 5,
+      "width": 157,
+      "height": 81,
+      "crs": "EPSG:32632",
+      "bounds": [
+        646980.0,
+        3876290.0,
+        648550.0,
+        3877100.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.45686875835495794,
+      "min": -32768.0,
+      "max": 6090.0,
+      "mean": -16381.74116536919
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\train\\extensif__parcel_1777666273477_7e680.tif",
+      "split": "train",
+      "bands": 5,
+      "width": 98,
+      "height": 101,
+      "crs": "EPSG:32632",
+      "bounds": [
+        647890.0,
+        3877450.0,
+        648870.0,
+        3878460.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.5515255607193372,
+      "min": -32768.0,
+      "max": 6152.0,
+      "mean": -12907.245787027683
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\train\\extensif__parcel_1777666300643_1c2ue.tif",
+      "split": "train",
+      "bands": 5,
+      "width": 99,
+      "height": 117,
+      "crs": "EPSG:32632",
+      "bounds": [
+        648420.0,
+        3876950.0,
+        649410.0,
+        3878120.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.4257964257964258,
+      "min": -32768.0,
+      "max": 6188.0,
+      "mean": -17435.203746870415
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\train\\extensif__parcel_1777666340373_juajr.tif",
+      "split": "train",
+      "bands": 5,
+      "width": 294,
+      "height": 202,
+      "crs": "EPSG:32632",
+      "bounds": [
+        636160.0,
+        3877500.0,
+        639100.0,
+        3879520.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.5102882737253317,
+      "min": -32768.0,
+      "max": 6137.0,
+      "mean": -14433.104879773691
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\train\\extensif__parcel_1777666373384_lm2rb.tif",
+      "split": "train",
+      "bands": 5,
+      "width": 446,
+      "height": 399,
+      "crs": "EPSG:32632",
+      "bounds": [
+        635260.0,
+        3874520.0,
+        639720.0,
+        3878510.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.4508018926239365,
+      "min": -32768.0,
+      "max": 6104.0,
+      "mean": -16670.487777740316
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\train\\extensif__parcel_1777666392195_gp8ab.tif",
+      "split": "train",
+      "bands": 5,
+      "width": 116,
+      "height": 100,
+      "crs": "EPSG:32632",
+      "bounds": [
+        630190.0,
+        3878910.0,
+        631350.0,
+        3879910.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.5089655172413793,
+      "min": -32768.0,
+      "max": 5998.0,
+      "mean": -14391.059189655172
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\train\\extensif__parcel_1777666410382_4ozey.tif",
+      "split": "train",
+      "bands": 5,
+      "width": 143,
+      "height": 141,
+      "crs": "EPSG:32632",
+      "bounds": [
+        631430.0,
+        3878820.0,
+        632860.0,
+        3880230.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.51936715766503,
+      "min": -32768.0,
+      "max": 6228.0,
+      "mean": -14038.563834746814
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\train\\extensif__parcel_1777666449437_wci0q.tif",
+      "split": "train",
+      "bands": 5,
+      "width": 283,
+      "height": 155,
+      "crs": "EPSG:32632",
+      "bounds": [
+        629950.0,
+        3877440.0,
+        632780.0,
+        3878990.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.5788441810099167,
+      "min": -32768.0,
+      "max": 6255.0,
+      "mean": -11884.414713324973
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\train\\intensif__parcel_1777662049508_exj14.tif",
+      "split": "train",
+      "bands": 5,
+      "width": 115,
+      "height": 157,
+      "crs": "EPSG:32632",
+      "bounds": [
+        589850.0,
+        4032870.0,
+        591000.0,
+        4034440.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.41002492384381056,
+      "min": -32768.0,
+      "max": 4461.0,
+      "mean": -18599.269177513153
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\train\\intensif__parcel_1777662108262_dhxlg.tif",
+      "split": "train",
+      "bands": 5,
+      "width": 252,
+      "height": 279,
+      "crs": "EPSG:32632",
+      "bounds": [
+        588270.0,
+        4034160.0,
+        590790.0,
+        4036950.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.526142117539967,
+      "min": -32768.0,
+      "max": 4538.0,
+      "mean": -14720.457927974057
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\train\\intensif__parcel_1777662148660_qey6r.tif",
+      "split": "train",
+      "bands": 5,
+      "width": 126,
+      "height": 200,
+      "crs": "EPSG:32632",
+      "bounds": [
+        590560.0,
+        4034780.0,
+        591820.0,
+        4036780.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.5562698412698412,
+      "min": -32768.0,
+      "max": 5205.0,
+      "mean": -13653.283793650793
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\train\\intensif__parcel_1777662294718_3mzv8.tif",
+      "split": "train",
+      "bands": 5,
+      "width": 147,
+      "height": 286,
+      "crs": "EPSG:32632",
+      "bounds": [
+        601710.0,
+        3936530.0,
+        603180.0,
+        3939390.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.45095380809666524,
+      "min": -32768.0,
+      "max": 5191.0,
+      "mean": -17091.867028209886
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\train\\intensif__parcel_1777662316778_yiudt.tif",
+      "split": "train",
+      "bands": 5,
+      "width": 79,
+      "height": 93,
+      "crs": "EPSG:32632",
+      "bounds": [
+        601570.0,
+        3938900.0,
+        602360.0,
+        3939830.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.526201170545801,
+      "min": -32768.0,
+      "max": 5648.0,
+      "mean": -14529.659806723834
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\train\\intensif__parcel_1777662471199_933e1.tif",
+      "split": "train",
+      "bands": 5,
+      "width": 125,
+      "height": 120,
+      "crs": "EPSG:32632",
+      "bounds": [
+        497140.0,
+        3845170.0,
+        498390.0,
+        3846370.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.5444,
+      "min": -32768.0,
+      "max": 5570.0,
+      "mean": -14025.020266666666
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\train\\intensif__parcel_1777662498867_hce6r.tif",
+      "split": "train",
+      "bands": 5,
+      "width": 110,
+      "height": 107,
+      "crs": "EPSG:32632",
+      "bounds": [
+        496260.0,
+        3844770.0,
+        497360.0,
+        3845840.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.4945624468988955,
+      "min": -32768.0,
+      "max": 5547.0,
+      "mean": -15793.37077315208
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\train\\intensif__parcel_1777662509830_ph4tb.tif",
+      "split": "train",
+      "bands": 5,
+      "width": 82,
+      "height": 71,
+      "crs": "EPSG:32632",
+      "bounds": [
+        496670.0,
+        3844610.0,
+        497490.0,
+        3845320.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.1496049467536929,
+      "min": -32768.0,
+      "max": 5624.0,
+      "mean": -27585.780659567157
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\train\\intensif__parcel_1777662532453_yoau8.tif",
+      "split": "train",
+      "bands": 5,
+      "width": 104,
+      "height": 83,
+      "crs": "EPSG:32632",
+      "bounds": [
+        496730.0,
+        3844240.0,
+        497770.0,
+        3845070.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.4112604263206673,
+      "min": -32768.0,
+      "max": 5059.0,
+      "mean": -18620.602710843374
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\train\\intensif__parcel_1777662559509_oh30t.tif",
+      "split": "train",
+      "bands": 5,
+      "width": 76,
+      "height": 93,
+      "crs": "EPSG:32632",
+      "bounds": [
+        497400.0,
+        3843970.0,
+        498160.0,
+        3844900.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.38271080928126766,
+      "min": -32768.0,
+      "max": 5742.0,
+      "mean": -19515.717741935485
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\train\\intensif__parcel_1777662581023_xa3jy.tif",
+      "split": "train",
+      "bands": 5,
+      "width": 80,
+      "height": 72,
+      "crs": "EPSG:32632",
+      "bounds": [
+        497010.0,
+        3843790.0,
+        497810.0,
+        3844510.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.5770833333333333,
+      "min": -32768.0,
+      "max": 5505.0,
+      "mean": -12805.057013888889
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\train\\intensif__parcel_1777662650200_lx0g1.tif",
+      "split": "train",
+      "bands": 5,
+      "width": 281,
+      "height": 324,
+      "crs": "EPSG:32632",
+      "bounds": [
+        484040.0,
+        3834530.0,
+        486850.0,
+        3837770.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.44132507359079126,
+      "min": -32768.0,
+      "max": 6390.0,
+      "mean": -17415.284005535785
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\train\\intensif__parcel_1777662674673_x7v1z.tif",
+      "split": "train",
+      "bands": 5,
+      "width": 134,
+      "height": 257,
+      "crs": "EPSG:32632",
+      "bounds": [
+        481300.0,
+        3832300.0,
+        482640.0,
+        3834870.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.5163482199895464,
+      "min": -32768.0,
+      "max": 4964.0,
+      "mean": -14861.135042685406
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\train\\intensif__parcel_1777662687780_8zuuk.tif",
+      "split": "train",
+      "bands": 5,
+      "width": 82,
+      "height": 103,
+      "crs": "EPSG:32632",
+      "bounds": [
+        482650.0,
+        3832700.0,
+        483470.0,
+        3833730.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.3864551266871892,
+      "min": -32768.0,
+      "max": 4540.0,
+      "mean": -19365.79265924698
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\train\\intensif__parcel_1777662715410_fr6g1.tif",
+      "split": "train",
+      "bands": 5,
+      "width": 216,
+      "height": 173,
+      "crs": "EPSG:32632",
+      "bounds": [
+        484160.0,
+        3830570.0,
+        486320.0,
+        3832300.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.344225005352173,
+      "min": -32768.0,
+      "max": 5450.0,
+      "mean": -20888.04156497538
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\train\\intensif__parcel_1777663020929_sz60j.tif",
+      "split": "train",
+      "bands": 5,
+      "width": 41,
+      "height": 116,
+      "crs": "EPSG:32632",
+      "bounds": [
+        575340.0,
+        3730040.0,
+        575750.0,
+        3731200.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.2767031118587048,
+      "min": -32768.0,
+      "max": 5411.0,
+      "mean": -23002.983263246424
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\train\\intensif__parcel_1777666990655_5k85g.tif",
+      "split": "train",
+      "bands": 5,
+      "width": 115,
+      "height": 161,
+      "crs": "EPSG:32632",
+      "bounds": [
+        593810.0,
+        3934320.0,
+        594960.0,
+        3935930.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.45595463137996217,
+      "min": -32768.0,
+      "max": 4856.0,
+      "mean": -16967.50657304888
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\train\\intensif__parcel_1777667140912_3xckb.tif",
+      "split": "train",
+      "bands": 5,
+      "width": 205,
+      "height": 258,
+      "crs": "EPSG:32632",
+      "bounds": [
+        581340.0,
+        3800800.0,
+        583390.0,
+        3803380.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.55655133295519,
+      "min": -32768.0,
+      "max": 7648.0,
+      "mean": -12434.636044620911
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\train\\intensif__parcel_1777667155941_ci6fx.tif",
+      "split": "train",
+      "bands": 5,
+      "width": 91,
+      "height": 94,
+      "crs": "EPSG:32632",
+      "bounds": [
+        582370.0,
+        3799370.0,
+        583280.0,
+        3800310.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.5392798690671031,
+      "min": -32768.0,
+      "max": 6618.0,
+      "mean": -13315.206406359597
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\train\\intensif__parcel_1777667189888_bwda5.tif",
+      "split": "train",
+      "bands": 5,
+      "width": 145,
+      "height": 169,
+      "crs": "EPSG:32632",
+      "bounds": [
+        583280.0,
+        3799600.0,
+        584730.0,
+        3801290.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.4304019587839216,
+      "min": -32768.0,
+      "max": 6912.0,
+      "mean": -17226.206823097327
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\val\\extensif__parcel_1777666032243_cm5hf.tif",
+      "split": "val",
+      "bands": 5,
+      "width": 715,
+      "height": 558,
+      "crs": "EPSG:32632",
+      "bounds": [
+        621680.0,
+        3870720.0,
+        628830.0,
+        3876300.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.5270972754843722,
+      "min": -32768.0,
+      "max": 6575.0,
+      "mean": -13611.714313858185
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\val\\extensif__parcel_1777666485645_8qagw.tif",
+      "split": "val",
+      "bands": 5,
+      "width": 426,
+      "height": 466,
+      "crs": "EPSG:32632",
+      "bounds": [
+        617420.0,
+        3869190.0,
+        621680.0,
+        3873850.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.4988061415704528,
+      "min": -32768.0,
+      "max": 6503.0,
+      "mean": -14716.082621048177
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\val\\extensif__parcel_1777666507054_wo1vk.tif",
+      "split": "val",
+      "bands": 5,
+      "width": 385,
+      "height": 440,
+      "crs": "EPSG:32632",
+      "bounds": [
+        619810.0,
+        3868070.0,
+        623660.0,
+        3872470.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.4594746162927981,
+      "min": -32768.0,
+      "max": 6408.0,
+      "mean": -16104.068144037781
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\val\\extensif__parcel_1777666529889_rdkq2.tif",
+      "split": "val",
+      "bands": 5,
+      "width": 534,
+      "height": 418,
+      "crs": "EPSG:32632",
+      "bounds": [
+        613850.0,
+        3871120.0,
+        619190.0,
+        3875300.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.4828459043420605,
+      "min": -32768.0,
+      "max": 6668.0,
+      "mean": -15268.107558733402
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\val\\intensif__parcel_1777667281825_3deuj.tif",
+      "split": "val",
+      "bands": 5,
+      "width": 163,
+      "height": 76,
+      "crs": "EPSG:32632",
+      "bounds": [
+        533470.0,
+        4044330.0,
+        535100.0,
+        4045090.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.588957055214724,
+      "min": -32768.0,
+      "max": 4108.0,
+      "mean": -12563.876461091379
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\val\\intensif__parcel_1777667302238_zjnhu.tif",
+      "split": "val",
+      "bands": 5,
+      "width": 66,
+      "height": 47,
+      "crs": "EPSG:32632",
+      "bounds": [
+        533170.0,
+        4044840.0,
+        533830.0,
+        4045310.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.5809155383623469,
+      "min": -32768.0,
+      "max": 4556.0,
+      "mean": -12633.551708575113
+    },
+    {
+      "path": "sentinel2_l2a\\2025_05_06\\val\\intensif__parcel_1777667330430_52762.tif",
+      "split": "val",
+      "bands": 5,
+      "width": 85,
+      "height": 92,
+      "crs": "EPSG:32632",
+      "bounds": [
+        531780.0,
+        4043990.0,
+        532630.0,
+        4044910.0
+      ],
+      "nodata": -32768.0,
+      "valid_ratio": 0.5829923273657289,
+      "min": -32768.0,
+      "max": 4003.0,
+      "mean": -12733.672097186702
+    }
+  ]
+}

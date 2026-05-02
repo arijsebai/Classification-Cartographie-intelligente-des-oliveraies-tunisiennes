@@ -1,0 +1,15 @@
+id,split,cultivation_system,governorate,zone_id,prediction,prediction_threshold,prob_intensif,correct,correct_threshold
+parcel_1777666032243_cm5hf,val,extensif,Sfax,Sfax__lat174_lng51,extensif,extensif,0.002,True,True
+parcel_1777666485645_8qagw,val,extensif,Sfax,Sfax__lat174_lng51,extensif,extensif,0.094,True,True
+parcel_1777666507054_wo1vk,val,extensif,Sfax,Sfax__lat174_lng51,extensif,extensif,0.076,True,True
+parcel_1777666529889_rdkq2,val,extensif,Sfax,Sfax__lat174_lng51,extensif,extensif,0.152,True,True
+parcel_1777667281825_3deuj,val,intensif,Beja,Beja__lat182_lng46,intensif,intensif,0.982,True,True
+parcel_1777667302238_zjnhu,val,intensif,Beja,Beja__lat182_lng46,intensif,intensif,0.804,True,True
+parcel_1777667330430_52762,val,intensif,Beja,Beja__lat182_lng46,intensif,intensif,0.982,True,True
+parcel_1777666069829_t5ehp,test,extensif,Sfax,Sfax__lat175_lng51,extensif,extensif,0.006,True,True
+parcel_1777666572107_7pdad,test,extensif,Kairouan,Kairouan__lat175_lng50,extensif,extensif,0.002,True,True
+parcel_1777666591451_o64cz,test,extensif,Kairouan,Kairouan__lat175_lng50,extensif,extensif,0.0,True,True
+parcel_1777666608727_pm8wx,test,extensif,Sidi_Bouzid,Sidi_Bouzid__lat175_lng50,extensif,extensif,0.0,True,True
+parcel_1777662875975_5jz1b,test,intensif,Gabes,Gabes__lat171_lng48,extensif,extensif,0.152,False,False
+parcel_1777662889381_5q9ie,test,intensif,Gabes,Gabes__lat171_lng48,extensif,intensif,0.22,False,True
+parcel_1777666827849_immef,test,intensif,Gafsa,Gafsa__lat173_lng43,extensif,intensif,0.228,False,True

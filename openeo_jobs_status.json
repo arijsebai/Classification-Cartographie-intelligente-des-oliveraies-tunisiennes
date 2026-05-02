@@ -1,0 +1,394 @@
+[
+  {
+    "job_id": "cdse-j-2605021202244f7985d6c6b94644d84b",
+    "split": "train",
+    "id": "parcel_1777662049508_exj14",
+    "cultivation_system": "intensif",
+    "status": "finished",
+    "title": "train__intensif__parcel_1777662049508_exj14__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-2605021203084dbb913ea3fa035a1512",
+    "split": "train",
+    "id": "parcel_1777662108262_dhxlg",
+    "cultivation_system": "intensif",
+    "status": "finished",
+    "title": "train__intensif__parcel_1777662108262_dhxlg__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-2605021203324ccd82fd9063960ffb94",
+    "split": "train",
+    "id": "parcel_1777662148660_qey6r",
+    "cultivation_system": "intensif",
+    "status": "finished",
+    "title": "train__intensif__parcel_1777662148660_qey6r__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-2605021204234569956c09e2aebf61be",
+    "split": "train",
+    "id": "parcel_1777662294718_3mzv8",
+    "cultivation_system": "intensif",
+    "status": "finished",
+    "title": "train__intensif__parcel_1777662294718_3mzv8__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-260502120508446e83ec2f8b4078c6b2",
+    "split": "train",
+    "id": "parcel_1777662316778_yiudt",
+    "cultivation_system": "intensif",
+    "status": "finished",
+    "title": "train__intensif__parcel_1777662316778_yiudt__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-26050212052747b2803609455ec48e24",
+    "split": "train",
+    "id": "parcel_1777662471199_933e1",
+    "cultivation_system": "intensif",
+    "status": "finished",
+    "title": "train__intensif__parcel_1777662471199_933e1__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-26050212065749d7ba82c8d774b59945",
+    "split": "train",
+    "id": "parcel_1777662498867_hce6r",
+    "cultivation_system": "intensif",
+    "status": "finished",
+    "title": "train__intensif__parcel_1777662498867_hce6r__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-260502120748404ebcf46209aad3241f",
+    "split": "train",
+    "id": "parcel_1777662509830_ph4tb",
+    "cultivation_system": "intensif",
+    "status": "finished",
+    "title": "train__intensif__parcel_1777662509830_ph4tb__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-26050212083243acafded6bb9e7aaf60",
+    "split": "train",
+    "id": "parcel_1777662532453_yoau8",
+    "cultivation_system": "intensif",
+    "status": "finished",
+    "title": "train__intensif__parcel_1777662532453_yoau8__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-26050212090040729a092fbf0757d780",
+    "split": "train",
+    "id": "parcel_1777662559509_oh30t",
+    "cultivation_system": "intensif",
+    "status": "finished",
+    "title": "train__intensif__parcel_1777662559509_oh30t__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-2605021209344283ba53657f6cfe08fd",
+    "split": "train",
+    "id": "parcel_1777662581023_xa3jy",
+    "cultivation_system": "intensif",
+    "status": "finished",
+    "title": "train__intensif__parcel_1777662581023_xa3jy__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-2605021210164b15bae39da81c02eb97",
+    "split": "train",
+    "id": "parcel_1777662650200_lx0g1",
+    "cultivation_system": "intensif",
+    "status": "finished",
+    "title": "train__intensif__parcel_1777662650200_lx0g1__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-26050212104840f082d762b343dc03b6",
+    "split": "train",
+    "id": "parcel_1777662674673_x7v1z",
+    "cultivation_system": "intensif",
+    "status": "finished",
+    "title": "train__intensif__parcel_1777662674673_x7v1z__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-260502121146447bae9209163de01a2e",
+    "split": "train",
+    "id": "parcel_1777662687780_8zuuk",
+    "cultivation_system": "intensif",
+    "status": "finished",
+    "title": "train__intensif__parcel_1777662687780_8zuuk__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-2605021212324be6b9b94cef1d4012ac",
+    "split": "train",
+    "id": "parcel_1777662715410_fr6g1",
+    "cultivation_system": "intensif",
+    "status": "finished",
+    "title": "train__intensif__parcel_1777662715410_fr6g1__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-26050212131144eebd32af1b8a845d5f",
+    "split": "train",
+    "id": "parcel_1777663020929_sz60j",
+    "cultivation_system": "intensif",
+    "status": "finished",
+    "title": "train__intensif__parcel_1777663020929_sz60j__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-260502121346445db5748a89e8b7be17",
+    "split": "train",
+    "id": "parcel_1777665966157_egeq5",
+    "cultivation_system": "extensif",
+    "status": "finished",
+    "title": "train__extensif__parcel_1777665966157_egeq5__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-26050212142748c18eeffcbe3c1ddc07",
+    "split": "train",
+    "id": "parcel_1777666096636_lo0y0",
+    "cultivation_system": "extensif",
+    "status": "finished",
+    "title": "train__extensif__parcel_1777666096636_lo0y0__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-26050212145447bd96b6f38915628cd6",
+    "split": "train",
+    "id": "parcel_1777666127269_tb54q",
+    "cultivation_system": "extensif",
+    "status": "finished",
+    "title": "train__extensif__parcel_1777666127269_tb54q__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-2605021215324bff805da1ba31654673",
+    "split": "train",
+    "id": "parcel_1777666170696_fk7cq",
+    "cultivation_system": "extensif",
+    "status": "finished",
+    "title": "train__extensif__parcel_1777666170696_fk7cq__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-26050212155446f38a301d3fa843b146",
+    "split": "train",
+    "id": "parcel_1777666196106_hhim9",
+    "cultivation_system": "extensif",
+    "status": "finished",
+    "title": "train__extensif__parcel_1777666196106_hhim9__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-2605021216164e20a2d36cceadd59946",
+    "split": "train",
+    "id": "parcel_1777666217906_3lfgs",
+    "cultivation_system": "extensif",
+    "status": "finished",
+    "title": "train__extensif__parcel_1777666217906_3lfgs__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-26050212163548aa924143035f283f44",
+    "split": "train",
+    "id": "parcel_1777666232428_43q5u",
+    "cultivation_system": "extensif",
+    "status": "finished",
+    "title": "train__extensif__parcel_1777666232428_43q5u__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-2605021216524093b970113643210f09",
+    "split": "train",
+    "id": "parcel_1777666247763_3i29v",
+    "cultivation_system": "extensif",
+    "status": "finished",
+    "title": "train__extensif__parcel_1777666247763_3i29v__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-2605021217104332bcf0c33102779cf5",
+    "split": "train",
+    "id": "parcel_1777666273477_7e680",
+    "cultivation_system": "extensif",
+    "status": "finished",
+    "title": "train__extensif__parcel_1777666273477_7e680__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-2605021217274d4da9d3443337945bd6",
+    "split": "train",
+    "id": "parcel_1777666300643_1c2ue",
+    "cultivation_system": "extensif",
+    "status": "finished",
+    "title": "train__extensif__parcel_1777666300643_1c2ue__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-2605021217444df1a483b7b252acef63",
+    "split": "train",
+    "id": "parcel_1777666340373_juajr",
+    "cultivation_system": "extensif",
+    "status": "finished",
+    "title": "train__extensif__parcel_1777666340373_juajr__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-2605021218014f17aadaa8c8e5bfb9dc",
+    "split": "train",
+    "id": "parcel_1777666373384_lm2rb",
+    "cultivation_system": "extensif",
+    "status": "finished",
+    "title": "train__extensif__parcel_1777666373384_lm2rb__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-2605021218194ed29156aad377a4b16c",
+    "split": "train",
+    "id": "parcel_1777666392195_gp8ab",
+    "cultivation_system": "extensif",
+    "status": "finished",
+    "title": "train__extensif__parcel_1777666392195_gp8ab__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-2605021218374f7e88db23f043f19825",
+    "split": "train",
+    "id": "parcel_1777666410382_4ozey",
+    "cultivation_system": "extensif",
+    "status": "finished",
+    "title": "train__extensif__parcel_1777666410382_4ozey__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-2605021218594847ac50a4e05dc8317a",
+    "split": "train",
+    "id": "parcel_1777666449437_wci0q",
+    "cultivation_system": "extensif",
+    "status": "finished",
+    "title": "train__extensif__parcel_1777666449437_wci0q__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-26050212191746dfa84ae6d251211992",
+    "split": "train",
+    "id": "parcel_1777666990655_5k85g",
+    "cultivation_system": "intensif",
+    "status": "finished",
+    "title": "train__intensif__parcel_1777666990655_5k85g__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-2605021219404f24a640706a21ea705a",
+    "split": "train",
+    "id": "parcel_1777667140912_3xckb",
+    "cultivation_system": "intensif",
+    "status": "finished",
+    "title": "train__intensif__parcel_1777667140912_3xckb__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-26050212195748dca25a9bd8b088407d",
+    "split": "train",
+    "id": "parcel_1777667155941_ci6fx",
+    "cultivation_system": "intensif",
+    "status": "finished",
+    "title": "train__intensif__parcel_1777667155941_ci6fx__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-2605021220134b0b8f65217b87abee43",
+    "split": "train",
+    "id": "parcel_1777667189888_bwda5",
+    "cultivation_system": "intensif",
+    "status": "finished",
+    "title": "train__intensif__parcel_1777667189888_bwda5__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-26050212203642818cef3aa33f4ef7b7",
+    "split": "val",
+    "id": "parcel_1777666032243_cm5hf",
+    "cultivation_system": "extensif",
+    "status": "finished",
+    "title": "val__extensif__parcel_1777666032243_cm5hf__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-26050212205341e880a325a1a2859cf7",
+    "split": "val",
+    "id": "parcel_1777666485645_8qagw",
+    "cultivation_system": "extensif",
+    "status": "finished",
+    "title": "val__extensif__parcel_1777666485645_8qagw__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-26050212211248fa9e384d784d738e27",
+    "split": "val",
+    "id": "parcel_1777666507054_wo1vk",
+    "cultivation_system": "extensif",
+    "status": "finished",
+    "title": "val__extensif__parcel_1777666507054_wo1vk__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-26050212212844958c2178d4b54f8d1f",
+    "split": "val",
+    "id": "parcel_1777666529889_rdkq2",
+    "cultivation_system": "extensif",
+    "status": "finished",
+    "title": "val__extensif__parcel_1777666529889_rdkq2__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-26050212214446499cbb05f0a0648e0f",
+    "split": "val",
+    "id": "parcel_1777667281825_3deuj",
+    "cultivation_system": "intensif",
+    "status": "finished",
+    "title": "val__intensif__parcel_1777667281825_3deuj__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-260502122201475dbbbdec02121745db",
+    "split": "val",
+    "id": "parcel_1777667302238_zjnhu",
+    "cultivation_system": "intensif",
+    "status": "finished",
+    "title": "val__intensif__parcel_1777667302238_zjnhu__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-26050212221943448e99908fba508ef8",
+    "split": "val",
+    "id": "parcel_1777667330430_52762",
+    "cultivation_system": "intensif",
+    "status": "finished",
+    "title": "val__intensif__parcel_1777667330430_52762__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-2605021222364cd1a26b11b52996a00c",
+    "split": "test",
+    "id": "parcel_1777662875975_5jz1b",
+    "cultivation_system": "intensif",
+    "status": "finished",
+    "title": "test__intensif__parcel_1777662875975_5jz1b__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-26050212225741569415181ff7df7b58",
+    "split": "test",
+    "id": "parcel_1777662889381_5q9ie",
+    "cultivation_system": "intensif",
+    "status": "finished",
+    "title": "test__intensif__parcel_1777662889381_5q9ie__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-26050212231942698cb9f4fa2028840b",
+    "split": "test",
+    "id": "parcel_1777666069829_t5ehp",
+    "cultivation_system": "extensif",
+    "status": "finished",
+    "title": "test__extensif__parcel_1777666069829_t5ehp__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-2605021223394d5caf0ef091beb5a25b",
+    "split": "test",
+    "id": "parcel_1777666572107_7pdad",
+    "cultivation_system": "extensif",
+    "status": "finished",
+    "title": "test__extensif__parcel_1777666572107_7pdad__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-2605021224004cc4af3e8e18b25bd796",
+    "split": "test",
+    "id": "parcel_1777666591451_o64cz",
+    "cultivation_system": "extensif",
+    "status": "finished",
+    "title": "test__extensif__parcel_1777666591451_o64cz__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-2605021224184a80958a95051fbc35db",
+    "split": "test",
+    "id": "parcel_1777666608727_pm8wx",
+    "cultivation_system": "extensif",
+    "status": "finished",
+    "title": "test__extensif__parcel_1777666608727_pm8wx__2025__05_06__s2_l2a"
+  },
+  {
+    "job_id": "cdse-j-26050212243441898fdefd634774ee45",
+    "split": "test",
+    "id": "parcel_1777666827849_immef",
+    "cultivation_system": "intensif",
+    "status": "finished",
+    "title": "test__intensif__parcel_1777666827849_immef__2025__05_06__s2_l2a"
+  }
+]

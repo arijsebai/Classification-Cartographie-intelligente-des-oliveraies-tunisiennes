@@ -15,6 +15,7 @@ def parse_args():
     parser.add_argument("--auth-timeout", type=int, default=900)
     parser.add_argument("--auth-method", choices=["device", "auth-code"], default="device")
     parser.add_argument("--no-browser", action="store_true")
+    parser.add_argument("--overwrite", action="store_true")
     return parser.parse_args()
 
 
@@ -74,7 +75,7 @@ def main():
         target_dir.mkdir(parents=True, exist_ok=True)
         target_file = target_dir / f"{system}__{parcel_id}.tif"
 
-        if target_file.exists():
+        if target_file.exists() and not args.overwrite:
             print(f"Already exists: {target_file}")
             continue
 

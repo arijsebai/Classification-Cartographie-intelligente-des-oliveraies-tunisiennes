@@ -1,0 +1,79 @@
+[
+  {
+    "split": "test",
+    "id": "parcel_1777662875975_5jz1b",
+    "cultivation_system": "intensif",
+    "governorate": "Gabes",
+    "zone_id": "Gabes__lat171_lng48",
+    "job_id": "cdse-j-26050214503142ecaf338128dafe222d",
+    "title": "test__intensif__parcel_1777662875975_5jz1b__2025__05_06__s2_l2a__bboxbuf0p01",
+    "started": false,
+    "start_error": "[400] ConcurrentJobLimit: Job was not started because concurrent job limit (30) is reached. (Upstream ref: 'r-2605021453024ebcaf48c60646c20894') (ref: r-26050214525940248e124a6031fab036)"
+  },
+  {
+    "split": "test",
+    "id": "parcel_1777662889381_5q9ie",
+    "cultivation_system": "intensif",
+    "governorate": "Gabes",
+    "zone_id": "Gabes__lat171_lng48",
+    "job_id": "cdse-j-26050214503748cd923cd432c81ca456",
+    "title": "test__intensif__parcel_1777662889381_5q9ie__2025__05_06__s2_l2a__bboxbuf0p01",
+    "started": false,
+    "start_error": null
+  },
+  {
+    "split": "test",
+    "id": "parcel_1777666069829_t5ehp",
+    "cultivation_system": "extensif",
+    "governorate": "Sfax",
+    "zone_id": "Sfax__lat175_lng51",
+    "job_id": "cdse-j-260502145039494fb88a623cd4e48c42",
+    "title": "test__extensif__parcel_1777666069829_t5ehp__2025__05_06__s2_l2a__bboxbuf0p01",
+    "started": false,
+    "start_error": null
+  },
+  {
+    "split": "test",
+    "id": "parcel_1777666572107_7pdad",
+    "cultivation_system": "extensif",
+    "governorate": "Kairouan",
+    "zone_id": "Kairouan__lat175_lng50",
+    "job_id": "cdse-j-2605021450414fb29a83e74ef83f7a48",
+    "title": "test__extensif__parcel_1777666572107_7pdad__2025__05_06__s2_l2a__bboxbuf0p01",
+    "started": false,
+    "start_error": null
+  },
+  {
+    "split": "test",
+    "id": "parcel_1777666591451_o64cz",
+    "cultivation_system": "extensif",
+    "governorate": "Kairouan",
+    "zone_id": "Kairouan__lat175_lng50",
+    "job_id": "cdse-j-2605021450434019ae1635e3883a4f48",
+    "title": "test__extensif__parcel_1777666591451_o64cz__2025__05_06__s2_l2a__bboxbuf0p01",
+    "started": false,
+    "start_error": null
+  },
+  {
+    "split": "test",
+    "id": "parcel_1777666608727_pm8wx",
+    "cultivation_system": "extensif",
+    "governorate": "Sidi_Bouzid",
+    "zone_id": "Sidi_Bouzid__lat175_lng50",
+    "job_id": "cdse-j-260502145045442cae4c0caced976772",
+    "title": "test__extensif__parcel_1777666608727_pm8wx__2025__05_06__s2_l2a__bboxbuf0p01",
+    "started": false,
+    "start_error": null
+  },
+  {
+    "split": "test",
+    "id": "parcel_1777666827849_immef",
+    "cultivation_system": "intensif",
+    "governorate": "Gafsa",
+    "zone_id": "Gafsa__lat173_lng43",
+    "job_id": "cdse-j-2605021450464b1cb29263d681a1962e",
+    "title": "test__intensif__parcel_1777666827849_immef__2025__05_06__s2_l2a__bboxbuf0p01",
+    "started": false,
+    "start_error": null
+  }
+]

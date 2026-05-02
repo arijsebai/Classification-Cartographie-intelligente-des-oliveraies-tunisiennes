@@ -1,0 +1,11 @@
+torch
+torchvision
+segmentation-models-pytorch
+albumentations
+rasterio
+geopandas
+shapely
+scikit-image
+scikit-learn
+opencv-python
+tqdm

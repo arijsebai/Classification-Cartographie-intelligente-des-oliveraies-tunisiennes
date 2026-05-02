@@ -1,0 +1,86 @@
+{
+  "checkpoint": "models\\segmentation_wiem_import\\final_best.pth",
+  "threshold": 0.5,
+  "count": 7,
+  "mean_iou": 0.9787379227114881,
+  "mean_dice": 0.9891006476467635,
+  "items": [
+    {
+      "id": "parcel_1777662875975_5jz1b",
+      "split": "test",
+      "cultivation_system": "intensif",
+      "image_path": "C:\\Users\\SP\\Desktop\\Hack The Harvest\\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\\sentinel2_l2a\\2025_05_06\\test\\intensif__parcel_1777662875975_5jz1b.tif",
+      "png_path": "models\\segmentation_wiem_import\\visual_test_predictions\\parcel_1777662875975_5jz1b.png",
+      "iou": 0.9493488998652896,
+      "dice": 0.9740164009951165,
+      "pred_positive_pixels": 11127,
+      "gt_positive_pixels": 10579
+    },
+    {
+      "id": "parcel_1777662889381_5q9ie",
+      "split": "test",
+      "cultivation_system": "intensif",
+      "image_path": "C:\\Users\\SP\\Desktop\\Hack The Harvest\\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\\sentinel2_l2a\\2025_05_06\\test\\intensif__parcel_1777662889381_5q9ie.tif",
+      "png_path": "models\\segmentation_wiem_import\\visual_test_predictions\\parcel_1777662889381_5q9ie.png",
+      "iou": 0.9327404113396331,
+      "dice": 0.9651998849582973,
+      "pred_positive_pixels": 1793,
+      "gt_positive_pixels": 1684
+    },
+    {
+      "id": "parcel_1777666069829_t5ehp",
+      "split": "test",
+      "cultivation_system": "extensif",
+      "image_path": "C:\\Users\\SP\\Desktop\\Hack The Harvest\\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\\sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666069829_t5ehp.tif",
+      "png_path": "models\\segmentation_wiem_import\\visual_test_predictions\\parcel_1777666069829_t5ehp.png",
+      "iou": 0.9955699409325458,
+      "dice": 0.9977800532185888,
+      "pred_positive_pixels": 299986,
+      "gt_positive_pixels": 298677
+    },
+    {
+      "id": "parcel_1777666572107_7pdad",
+      "split": "test",
+      "cultivation_system": "extensif",
+      "image_path": "C:\\Users\\SP\\Desktop\\Hack The Harvest\\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\\sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666572107_7pdad.tif",
+      "png_path": "models\\segmentation_wiem_import\\visual_test_predictions\\parcel_1777666572107_7pdad.png",
+      "iou": 0.9949784791965567,
+      "dice": 0.997482919813017,
+      "pred_positive_pixels": 144974,
+      "gt_positive_pixels": 144250
+    },
+    {
+      "id": "parcel_1777666591451_o64cz",
+      "split": "test",
+      "cultivation_system": "extensif",
+      "image_path": "C:\\Users\\SP\\Desktop\\Hack The Harvest\\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\\sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666591451_o64cz.tif",
+      "png_path": "models\\segmentation_wiem_import\\visual_test_predictions\\parcel_1777666591451_o64cz.png",
+      "iou": 0.9925894292604501,
+      "dice": 0.996280934430983,
+      "pred_positive_pixels": 79605,
+      "gt_positive_pixels": 79037
+    },
+    {
+      "id": "parcel_1777666608727_pm8wx",
+      "split": "test",
+      "cultivation_system": "extensif",
+      "image_path": "C:\\Users\\SP\\Desktop\\Hack The Harvest\\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\\sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666608727_pm8wx.tif",
+      "png_path": "models\\segmentation_wiem_import\\visual_test_predictions\\parcel_1777666608727_pm8wx.png",
+      "iou": 0.9928652505269986,
+      "dice": 0.9964198535394629,
+      "pred_positive_pixels": 36994,
+      "gt_positive_pixels": 36746
+    },
+    {
+      "id": "parcel_1777666827849_immef",
+      "split": "test",
+      "cultivation_system": "intensif",
+      "image_path": "C:\\Users\\SP\\Desktop\\Hack The Harvest\\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\\sentinel2_l2a\\2025_05_06\\test\\intensif__parcel_1777666827849_immef.tif",
+      "png_path": "models\\segmentation_wiem_import\\visual_test_predictions\\parcel_1777666827849_immef.png",
+      "iou": 0.993073047858942,
+      "dice": 0.99652448657188,
+      "pred_positive_pixels": 61924,
+      "gt_positive_pixels": 61511
+    }
+  ]
+}

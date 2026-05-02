@@ -1,0 +1,531 @@
+{
+  "train_records": 35,
+  "val_records": 7,
+  "test_records": 7,
+  "labels": [
+    "extensif",
+    "intensif"
+  ],
+  "config": {
+    "image_root": "C:\\Users\\SP\\Desktop\\Hack The Harvest\\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\\sentinel2_l2a\\2025_05_06",
+    "image_pattern": "{cultivation_system}__{id}.tif",
+    "cv_folds": 3,
+    "n_estimators": 300,
+    "max_depth": 12,
+    "min_samples_leaf": 1,
+    "n_jobs": 1,
+    "random_state": 42
+  },
+  "cv_results": [
+    {
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "confusion_matrix": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          11
+        ]
+      ],
+      "labels": [
+        "extensif",
+        "intensif"
+      ],
+      "classification_report": {
+        "extensif": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 1.0
+        },
+        "intensif": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 11.0
+        },
+        "accuracy": 1.0,
+        "macro avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 12.0
+        },
+        "weighted avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 12.0
+        }
+      },
+      "fold": 1,
+      "train_size": 23,
+      "val_size": 12
+    },
+    {
+      "accuracy": 0.7272727272727273,
+      "macro_f1": 0.42105263157894735,
+      "confusion_matrix": [
+        [
+          8,
+          0
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "labels": [
+        "extensif",
+        "intensif"
+      ],
+      "classification_report": {
+        "extensif": {
+          "precision": 0.7272727272727273,
+          "recall": 1.0,
+          "f1-score": 0.8421052631578947,
+          "support": 8.0
+        },
+        "intensif": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 3.0
+        },
+        "accuracy": 0.7272727272727273,
+        "macro avg": {
+          "precision": 0.36363636363636365,
+          "recall": 0.5,
+          "f1-score": 0.42105263157894735,
+          "support": 11.0
+        },
+        "weighted avg": {
+          "precision": 0.5289256198347108,
+          "recall": 0.7272727272727273,
+          "f1-score": 0.6124401913875598,
+          "support": 11.0
+        }
+      },
+      "fold": 2,
+      "train_size": 24,
+      "val_size": 11
+    },
+    {
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "confusion_matrix": [
+        [
+          6,
+          0
+        ],
+        [
+          0,
+          6
+        ]
+      ],
+      "labels": [
+        "extensif",
+        "intensif"
+      ],
+      "classification_report": {
+        "extensif": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 6.0
+        },
+        "intensif": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 6.0
+        },
+        "accuracy": 1.0,
+        "macro avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 12.0
+        },
+        "weighted avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 12.0
+        }
+      },
+      "fold": 3,
+      "train_size": 23,
+      "val_size": 12
+    }
+  ],
+  "holdout_val_metrics": {
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "confusion_matrix": [
+      [
+        4,
+        0
+      ],
+      [
+        0,
+        3
+      ]
+    ],
+    "labels": [
+      "extensif",
+      "intensif"
+    ],
+    "classification_report": {
+      "extensif": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 4.0
+      },
+      "intensif": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 3.0
+      },
+      "accuracy": 1.0,
+      "macro avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 7.0
+      },
+      "weighted avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 7.0
+      }
+    }
+  },
+  "test_metrics": {
+    "accuracy": 0.5714285714285714,
+    "macro_f1": 0.36363636363636365,
+    "confusion_matrix": [
+      [
+        4,
+        0
+      ],
+      [
+        3,
+        0
+      ]
+    ],
+    "labels": [
+      "extensif",
+      "intensif"
+    ],
+    "classification_report": {
+      "extensif": {
+        "precision": 0.5714285714285714,
+        "recall": 1.0,
+        "f1-score": 0.7272727272727273,
+        "support": 4.0
+      },
+      "intensif": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 3.0
+      },
+      "accuracy": 0.5714285714285714,
+      "macro avg": {
+        "precision": 0.2857142857142857,
+        "recall": 0.5,
+        "f1-score": 0.36363636363636365,
+        "support": 7.0
+      },
+      "weighted avg": {
+        "precision": 0.32653061224489793,
+        "recall": 0.5714285714285714,
+        "f1-score": 0.4155844155844156,
+        "support": 7.0
+      }
+    }
+  },
+  "feature_importances": [
+    {
+      "feature": "ndmi_p10",
+      "importance": 0.08999999999999998
+    },
+    {
+      "feature": "ndmi_mean",
+      "importance": 0.08666666666666664
+    },
+    {
+      "feature": "ndwi_std",
+      "importance": 0.07999999999999999
+    },
+    {
+      "feature": "bsi_p90",
+      "importance": 0.06722211678370342
+    },
+    {
+      "feature": "swir1_p10",
+      "importance": 0.06133361052630155
+    },
+    {
+      "feature": "bsi_p10",
+      "importance": 0.06085239552867459
+    },
+    {
+      "feature": "ndvi_mean",
+      "importance": 0.05549678933333021
+    },
+    {
+      "feature": "ndvi_std",
+      "importance": 0.05333333333333333
+    },
+    {
+      "feature": "ndmi_p90",
+      "importance": 0.05234227160113249
+    },
+    {
+      "feature": "ndvi_p90",
+      "importance": 0.051173226773226776
+    },
+    {
+      "feature": "bsi_mean",
+      "importance": 0.04694555112881804
+    },
+    {
+      "feature": "canopy_fraction_ndvi_035",
+      "importance": 0.0319466145585422
+    },
+    {
+      "feature": "ndvi_p10",
+      "importance": 0.029442054721836287
+    },
+    {
+      "feature": "bsi_std",
+      "importance": 0.026334845049130765
+    },
+    {
+      "feature": "ndwi_p10",
+      "importance": 0.023970629554478325
+    },
+    {
+      "feature": "swir1_mean",
+      "importance": 0.022784840513029002
+    },
+    {
+      "feature": "ndwi_mean",
+      "importance": 0.02223173929280643
+    },
+    {
+      "feature": "ndvi_glcm_dissimilarity",
+      "importance": 0.02056520045807555
+    },
+    {
+      "feature": "swir1_min",
+      "importance": 0.02
+    },
+    {
+      "feature": "swir1_p90",
+      "importance": 0.019155086081519085
+    },
+    {
+      "feature": "ndvi_glcm_contrast",
+      "importance": 0.01033182161753591
+    },
+    {
+      "feature": "ndmi_max",
+      "importance": 0.009316294580863962
+    },
+    {
+      "feature": "blue_p10",
+      "importance": 0.00695159431425278
+    },
+    {
+      "feature": "red_p10",
+      "importance": 0.005847480773978935
+    },
+    {
+      "feature": "ndmi_std",
+      "importance": 0.005830344207877191
+    },
+    {
+      "feature": "bsi_min",
+      "importance": 0.005757575757575759
+    },
+    {
+      "feature": "canopy_fraction_ndvi_05",
+      "importance": 0.0038840929484204403
+    },
+    {
+      "feature": "green_p90",
+      "importance": 0.0033628958575300082
+    },
+    {
+      "feature": "ndvi_max",
+      "importance": 0.0033333333333333422
+    },
+    {
+      "feature": "green_min",
+      "importance": 0.003333333333333332
+    },
+    {
+      "feature": "blue_mean",
+      "importance": 0.0033332806140739368
+    },
+    {
+      "feature": "nir_mean",
+      "importance": 0.0030520634920634935
+    },
+    {
+      "feature": "red_min",
+      "importance": 0.0030433936563533793
+    },
+    {
+      "feature": "ndwi_min",
+      "importance": 0.0026984126984127012
+    },
+    {
+      "feature": "blue_std",
+      "importance": 0.0019043010752688198
+    },
+    {
+      "feature": "swir1_max",
+      "importance": 0.0014290322580645242
+    },
+    {
+      "feature": "ndmi_min",
+      "importance": 0.0011904761904762032
+    },
+    {
+      "feature": "nir_glcm_homogeneity",
+      "importance": 0.0008532275792007208
+    },
+    {
+      "feature": "swir1_std",
+      "importance": 0.0005443981306050258
+    },
+    {
+      "feature": "nir_glcm_contrast",
+      "importance": 0.0005374280230326368
+    },
+    {
+      "feature": "nir_glcm_dissimilarity",
+      "importance": 0.00053425824510162
+    },
+    {
+      "feature": "green_max",
+      "importance": 0.0002981427174975646
+    },
+    {
+      "feature": "nir_min",
+      "importance": 0.0002790608160123248
+    },
+    {
+      "feature": "ndvi_min",
+      "importance": 0.0002790608160123205
+    },
+    {
+      "feature": "red_max",
+      "importance": 0.0002777250585183813
+    },
+    {
+      "feature": "nir_p90",
+      "importance": 1.1085864043974128e-17
+    },
+    {
+      "feature": "blue_p90",
+      "importance": 9.58768468168566e-18
+    },
+    {
+      "feature": "red_p90",
+      "importance": 9.544498846664266e-18
+    },
+    {
+      "feature": "green_std",
+      "importance": 9.525638842827758e-18
+    },
+    {
+      "feature": "bsi_max",
+      "importance": 8.266083678339793e-18
+    },
+    {
+      "feature": "nir_max",
+      "importance": 7.053737688105262e-18
+    },
+    {
+      "feature": "parcel_area_ha",
+      "importance": 6.4986261138883e-18
+    },
+    {
+      "feature": "nir_glcm_energy",
+      "importance": 6.081756140028438e-18
+    },
+    {
+      "feature": "nir_p10",
+      "importance": 5.177145262199408e-18
+    },
+    {
+      "feature": "green_mean",
+      "importance": 3.823386837466911e-18
+    },
+    {
+      "feature": "green_p10",
+      "importance": 3.563976810934378e-18
+    },
+    {
+      "feature": "ndwi_p90",
+      "importance": 3.2786125808197274e-18
+    },
+    {
+      "feature": "ndvi_glcm_correlation",
+      "importance": 3.1093327452021918e-18
+    },
+    {
+      "feature": "red_std",
+      "importance": 2.9021619415640048e-18
+    },
+    {
+      "feature": "mask_pixel_count",
+      "importance": 2.2204460492503097e-18
+    },
+    {
+      "feature": "nir_glcm_correlation",
+      "importance": 2.1571438592497544e-18
+    },
+    {
+      "feature": "ndwi_max",
+      "importance": 1.7646702812463003e-18
+    },
+    {
+      "feature": "ndvi_glcm_homogeneity",
+      "importance": 1.7337178391791384e-18
+    },
+    {
+      "feature": "nir_std",
+      "importance": 9.686358777600048e-19
+    },
+    {
+      "feature": "blue_max",
+      "importance": 0.0
+    },
+    {
+      "feature": "blue_min",
+      "importance": 0.0
+    },
+    {
+      "feature": "ndvi_glcm_energy",
+      "importance": 0.0
+    },
+    {
+      "feature": "red_mean",
+      "importance": 0.0
+    }
+  ],
+  "model_path": "models/classification/random_forest.joblib",
+  "feature_csv": "models/classification/features.csv"
+}

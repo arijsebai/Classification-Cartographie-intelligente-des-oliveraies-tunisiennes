@@ -1,0 +1,15 @@
+{
+  "test_samples": 7,
+  "mean_loss": 0.022452734410762787,
+  "mean_iou": 0.9928340911865234,
+  "mean_dice": 0.9936830699443817,
+  "checkpoint": "models\\segmentation_wiem_import\\final_best.pth",
+  "bands": [
+    2,
+    3,
+    4,
+    8,
+    11
+  ],
+  "tile_size": 128
+}

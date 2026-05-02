@@ -1,0 +1,98 @@
+{
+  "train_split": "data_splits/ezzayra_oliviers/train.json",
+  "val_split": "data_splits/ezzayra_oliviers/val.json",
+  "cv_results": [],
+  "final_result": {
+    "best_path": "models\\segmentation_wiem_import\\final_best.pth",
+    "best_val_iou": 0.9927744368712107,
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.1588876335709184,
+        "train_iou": 0.5982949314294038,
+        "val_loss": 1.1029341618220012,
+        "val_iou": 0.635508527358373
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.0028951675803572,
+        "train_iou": 0.6143157956776796,
+        "val_loss": 0.8793825705846151,
+        "val_iou": 0.6432395676771799
+      },
+      {
+        "epoch": 3,
+        "train_loss": 0.7114221994523648,
+        "train_iou": 0.6243515268520072,
+        "val_loss": 0.5097823329269886,
+        "val_iou": 0.6603699326515198
+      },
+      {
+        "epoch": 4,
+        "train_loss": 0.45591983833798655,
+        "train_iou": 0.6969648257449821,
+        "val_loss": 0.34295699652284384,
+        "val_iou": 0.9166842599709829
+      },
+      {
+        "epoch": 5,
+        "train_loss": 0.29402466145930467,
+        "train_iou": 0.9219713100680599,
+        "val_loss": 0.22306791072090468,
+        "val_iou": 0.9281237026055654
+      },
+      {
+        "epoch": 6,
+        "train_loss": 0.12475275910562938,
+        "train_iou": 0.9572094745106168,
+        "val_loss": 0.04248859298725923,
+        "val_iou": 0.9896609882513682
+      },
+      {
+        "epoch": 7,
+        "train_loss": 0.05629479133144573,
+        "train_iou": 0.9784386798187539,
+        "val_loss": 0.026929302761952083,
+        "val_iou": 0.9916858077049255
+      },
+      {
+        "epoch": 8,
+        "train_loss": 0.046847039764678036,
+        "train_iou": 0.9808617499139574,
+        "val_loss": 0.022413484286516905,
+        "val_iou": 0.9927744368712107
+      },
+      {
+        "epoch": 9,
+        "train_loss": 0.030177088557846017,
+        "train_iou": 0.9890458363073843,
+        "val_loss": 0.02062773782139023,
+        "val_iou": 0.9901971220970154
+      },
+      {
+        "epoch": 10,
+        "train_loss": 0.029193935846840893,
+        "train_iou": 0.9888830736831382,
+        "val_loss": 0.018309117139627535,
+        "val_iou": 0.9902706742286682
+      }
+    ]
+  },
+  "config": {
+    "bands": [
+      2,
+      3,
+      4,
+      8,
+      11
+    ],
+    "tile_size": 128,
+    "tiles_per_polygon": 3,
+    "epochs": 10,
+    "batch_size": 4,
+    "lr": 0.0001,
+    "patience": 5,
+    "cv_folds": 1,
+    "encoder_name": "resnet34"
+  }
+}

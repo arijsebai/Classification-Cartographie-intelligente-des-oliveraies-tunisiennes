@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartographie Intelligente des Oliveraies</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="header-content">
+                <h1>AgriManager Dashboard</h1>
+                <p>Détection & Classification S2</p>
+            </div>
+            <div class="header-actions">
+                <button id="btn-analyze" class="btn btn-primary" disabled>
+                    <span class="btn-text">Analyser cette zone</span>
+                    <div class="loader-spinner" style="display: none;"></div>
+                </button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="sidebar panel-glass">
+                <div class="stats-header">
+                    <h2>Résultats de Détection</h2>
+                </div>
+                
+                <div id="loading-state" class="state-container">
+                    <p>Dessinez un polygone sur la carte, puis cliquez sur Analyser.</p>
+                </div>
+
+                <div id="results-state" class="state-container" style="display: none;">
+                    <div class="stat-card">
+                        <span class="stat-label">Total Oliveraies</span>
+                        <span id="stat-total" class="stat-value">0</span>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <span class="stat-label">Surface Globale</span>
+                        <span id="stat-surface" class="stat-value">0 ha</span>
+                    </div>
+
+                    <div class="repartition-list">
+                        <div class="repartition-item">
+                            <span class="legende-color extensif"></span>
+                            <div class="rep-text">
+                                <span class="rep-label">Extensif (sec)</span>
+                                <span id="stat-ext" class="rep-val">0</span>
+                            </div>
+                        </div>
+                        <div class="repartition-item">
+                            <span class="legende-color intensif"></span>
+                            <div class="rep-text">
+                                <span class="rep-label">Intensif</span>
+                                <span id="stat-int" class="rep-val">0</span>
+                            </div>
+                        </div>
+                        <div class="repartition-item">
+                            <span class="legende-color hyper_intensif"></span>
+                            <div class="rep-text">
+                                <span class="rep-label">Hyper-Intensif (irrigué)</span>
+                                <span id="stat-hyper" class="rep-val">0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="btn-download" class="btn btn-secondary">
+                        Télécharger Export GeoJSON
+                    </button>
+                </div>
+            </div>
+
+            <div class="map-wrapper">
+                <div id="map"></div>
+                <div class="map-legend panel-glass">
+                    <h4>Légende</h4>
+                    <div class="legend-row"><span class="legende-color extensif"></span> Extensif</div>
+                    <div class="legend-row"><span class="legende-color intensif"></span> Intensif</div>
+                    <div class="legend-row"><span class="legende-color hyper_intensif"></span> Hyper-intensif</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

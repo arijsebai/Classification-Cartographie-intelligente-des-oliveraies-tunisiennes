@@ -1,0 +1,10 @@
+flask
+flask-cors
+geopandas
+shapely
+scikit-learn
+pystac-client
+planetary-computer
+requests
+rasterio
+numpy

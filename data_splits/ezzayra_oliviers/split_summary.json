@@ -1,0 +1,59 @@
+{
+  "generated_at": "2026-05-02T09:57:22.321Z",
+  "seed": "ezzayra-oliviers-v1",
+  "ratios": {
+    "train": 0.7,
+    "val": 0.15,
+    "test": 0.15
+  },
+  "zone_grid_degrees": 0.2,
+  "governorate_method": "nearest Tunisian governorate center from parcel centroid",
+  "total_parcels": 49,
+  "total_zones": 15,
+  "leaking_zones": [],
+  "splits": {
+    "train": {
+      "parcel_count": 35,
+      "zone_count": 8,
+      "by_cultivation_system": {
+        "intensif": 20,
+        "extensif": 15
+      },
+      "by_governorate": {
+        "Gafsa": 10,
+        "Sfax": 14,
+        "Zaghouan": 3,
+        "Kairouan": 3,
+        "Gabes": 4,
+        "Mahdia": 1
+      }
+    },
+    "val": {
+      "parcel_count": 7,
+      "zone_count": 2,
+      "by_cultivation_system": {
+        "extensif": 4,
+        "intensif": 3
+      },
+      "by_governorate": {
+        "Sfax": 4,
+        "Beja": 3
+      }
+    },
+    "test": {
+      "parcel_count": 7,
+      "zone_count": 5,
+      "by_cultivation_system": {
+        "intensif": 3,
+        "extensif": 4
+      },
+      "by_governorate": {
+        "Gabes": 2,
+        "Kairouan": 2,
+        "Sidi_Bouzid": 1,
+        "Sfax": 1,
+        "Gafsa": 1
+      }
+    }
+  }
+}

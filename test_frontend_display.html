@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test affichage pourcentage - Frontend Fix</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .test-case {
+            margin: 15px 0;
+            padding: 10px;
+            background: #f9f9f9;
+            border-left: 4px solid #2563eb;
+        }
+        .result {
+            margin-top: 10px;
+            padding: 10px;
+            background: #e8f5e9;
+            border-radius: 4px;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+        .error {
+            background: #ffebee;
+            border-left-color: #d32f2f;
+        }
+        .success {
+            background: #e8f5e9;
+            border-left-color: #388e3c;
+        }
+        h1 {
+            color: #333;
+        }
+        h2 {
+            color: #666;
+            border-bottom: 2px solid #2563eb;
+            padding-bottom: 10px;
+        }
+        .status {
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .status.pass {
+            background: #388e3c;
+            color: white;
+        }
+        .status.fail {
+            background: #d32f2f;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Test d'affichage des pourcentages - Frontend Fix</h1>
+    
+    <div class="test-section">
+        <h2>Fonction classificationSummary() - Tous les cas</h2>
+        <div id="classificationSummaryTests"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Fonction parcelPopup() - Tous les cas</h2>
+        <div id="parcelPopupTests"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Résumé</h2>
+        <div id="summary"></div>
+    </div>
+
+    <script>
+        // Copie des fonctions améliorées
+        function classificationSummary(cls, prefix = "Classification") {
+            const confidence = Math.round((cls.confidence || 0) * 100);
+            
+            // Always show both probabilities
+            let probText = "";
+            if (cls.prob_intensif !== undefined && cls.prob_intensif !== null) {
+                const prob_intensif = Math.round(cls.prob_intensif * 100);
+                const prob_extensif = 100 - prob_intensif;
+                probText = ` [Intensif: ${prob_intensif}% | Extensif: ${prob_extensif}%]`;
+            } else {
+                probText = " [Probabilités non disponibles]";
+            }
+            
+            return `${prefix}: ${cls.label} (${confidence}%).${probText}`;
+        }
+
+        function parcelPopup(feature) {
+            const props = feature.properties || {};
+            const predicted = props.model_prediction || "non disponible";
+            const truth = props.cultivation_system || "inconnu";
+            
+            let probText = "";
+            if (props.prob_intensif !== null && props.prob_intensif !== undefined) {
+                const prob_intensif = Math.round(props.prob_intensif * 100);
+                const prob_extensif = 100 - prob_intensif;
+                probText = `<br>Probabilités: Intensif ${prob_intensif}% | Extensif ${prob_extensif}%`;
+            }
+            
+            const area = Number(props.area_ha || 0);
+
+            return `
+                <strong>${props.name || props.id}</strong><br>
+                Verite terrain: ${truth}<br>
+                Prediction modele: <strong>${predicted}</strong>${probText}<br>
+                Source: ${props.model_source || "label terrain"}<br>
+                ${props.governorate || ""}<br>
+                ${area.toFixed(1)} ha
+            `;
+        }
+
+        // Test cases
+        const testCases = [
+            {
+                name: "Cas 1: prob_intensif = 0.85 (Intensif)",
+                data: { label: "intensif", confidence: 0.85, prob_intensif: 0.85 },
+                expected: "Intensif: 85% | Extensif: 15%"
+            },
+            {
+                name: "Cas 2: prob_intensif = 0.15 (Extensif)",
+                data: { label: "extensif", confidence: 0.85, prob_intensif: 0.15 },
+                expected: "Intensif: 15% | Extensif: 85%"
+            },
+            {
+                name: "Cas 3: prob_intensif = 0 (Extensif pur)",
+                data: { label: "extensif", confidence: 1.0, prob_intensif: 0 },
+                expected: "Intensif: 0% | Extensif: 100%"
+            },
+            {
+                name: "Cas 4: prob_intensif = 1 (Intensif pur)",
+                data: { label: "intensif", confidence: 1.0, prob_intensif: 1 },
+                expected: "Intensif: 100% | Extensif: 0%"
+            },
+            {
+                name: "Cas 5: prob_intensif = null (Non disponible)",
+                data: { label: "intensif", confidence: 0.8, prob_intensif: null },
+                expected: "Probabilités non disponibles"
+            },
+            {
+                name: "Cas 6: prob_intensif = undefined (Non disponible)",
+                data: { label: "extensif", confidence: 0.9 },
+                expected: "Probabilités non disponibles"
+            },
+            {
+                name: "Cas 7: prob_intensif = 0.5 (Équilibre)",
+                data: { label: "intensif", confidence: 0.5, prob_intensif: 0.5 },
+                expected: "Intensif: 50% | Extensif: 50%"
+            },
+            {
+                name: "Cas 8: prob_intensif = 0.234 (Rounding test)",
+                data: { label: "extensif", confidence: 0.766, prob_intensif: 0.234 },
+                expected: "Intensif: 23% | Extensif: 77%"
+            }
+        ];
+
+        let passCount = 0;
+        let failCount = 0;
+
+        const summaryDiv = document.getElementById("classificationSummaryTests");
+        testCases.forEach((test, index) => {
+            const result = classificationSummary(test.data, "Test");
+            const passed = result.includes(test.expected);
+            
+            if (passed) passCount++;
+            else failCount++;
+
+            const testDiv = document.createElement("div");
+            testDiv.className = `test-case ${passed ? 'success' : 'error'}`;
+            testDiv.innerHTML = `
+                <strong>${test.name}</strong><br>
+                <span class="status ${passed ? 'pass' : 'fail'}">${passed ? '✓ PASS' : '✗ FAIL'}</span>
+                <div class="result">Résultat:
+${result}
+
+Attendu: contient "${test.expected}"</div>
+            `;
+            summaryDiv.appendChild(testDiv);
+        });
+
+        // Test parcelPopup
+        const popupSummaryDiv = document.getElementById("parcelPopupTests");
+        const popupTestCases = [
+            {
+                name: "Popup: prob_intensif = 0.85",
+                data: { properties: { name: "Parcel A", model_prediction: "intensif", cultivation_system: "intensif", prob_intensif: 0.85, area_ha: 10 } },
+                expected: "Intensif 85% | Extensif 15%"
+            },
+            {
+                name: "Popup: prob_intensif = 0.15",
+                data: { properties: { name: "Parcel B", model_prediction: "extensif", cultivation_system: "extensif", prob_intensif: 0.15, area_ha: 50 } },
+                expected: "Intensif 15% | Extensif 85%"
+            },
+            {
+                name: "Popup: prob_intensif = null",
+                data: { properties: { name: "Parcel C", model_prediction: "intensif", cultivation_system: "intensif", prob_intensif: null, area_ha: 20 } },
+                expected: "non disponible"
+            }
+        ];
+
+        popupTestCases.forEach((test, index) => {
+            const result = parcelPopup(test.data);
+            // For null case, check that probText is empty (no probability displayed)
+            let passed;
+            if (index === 2 && test.name.includes("null")) {
+                // For null case, verify that probText is NOT displayed (empty)
+                passed = result.includes("Prediction modele: <strong>intensif</strong><br>") && 
+                         !result.includes("Probabilités:");
+            } else {
+                passed = result.includes(test.expected);
+            }
+            
+            if (passed) passCount++;
+            else failCount++;
+
+            const testDiv = document.createElement("div");
+            testDiv.className = `test-case ${passed ? 'success' : 'error'}`;
+            testDiv.innerHTML = `
+                <strong>${test.name}</strong><br>
+                <span class="status ${passed ? 'pass' : 'fail'}">${passed ? '✓ PASS' : '✗ FAIL'}</span>
+                <div class="result">Résultat:
+${result}
+
+Attendu: ${index === 2 && test.name.includes("null") ? "Pas de probabilités affichées" : `contient "${test.expected}"`}</div>
+            `;
+            popupSummaryDiv.appendChild(testDiv);
+        });
+
+        // Summary
+        const totalTests = testCases.length + popupTestCases.length;
+        const successRate = Math.round((passCount / totalTests) * 100);
+        const summaryDivFinal = document.getElementById("summary");
+        summaryDivFinal.innerHTML = `
+            <strong>Total des tests: ${totalTests}</strong><br>
+            <span class="status pass">✓ Réussi: ${passCount}</span>
+            <span class="status fail">✗ Échoué: ${failCount}</span><br>
+            <strong>Taux de réussite: ${successRate}%</strong><br><br>
+            ${failCount === 0 ? '<h3 style="color: #388e3c;">✓ Tous les tests sont passés! Le frontend affiche maintenant correctement les pourcentages.</h3>' : '<h3 style="color: #d32f2f;">✗ Certains tests ont échoué.</h3>'}
+        `;
+    </script>
+</body>
+</html>

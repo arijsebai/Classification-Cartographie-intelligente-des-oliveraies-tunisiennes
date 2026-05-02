@@ -1,0 +1,17 @@
+{
+  "sentinel_root": "sentinel2_l2a/2025_05_06",
+  "geojson_root": "data_splits/ezzayra_oliviers_geojson_augmented",
+  "output_dir": "models/unet_resnet_sentinel2_augmented",
+  "encoder": "resnet34",
+  "encoder_weights": "imagenet",
+  "image_size": 256,
+  "epochs": 30,
+  "batch_size": 4,
+  "lr": 0.0001,
+  "num_workers": 0,
+  "bce_weight": 0.5,
+  "dice_weight": 0.5,
+  "device": "cpu",
+  "no_pretrained": false,
+  "mask_mode": "auto"
+}

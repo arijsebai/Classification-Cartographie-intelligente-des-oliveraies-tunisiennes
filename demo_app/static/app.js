@@ -154,10 +154,18 @@ function polygonAreaM2(latlngs) {
 
 function classificationSummary(cls, prefix = "Classification") {
   const confidence = Math.round((cls.confidence || 0) * 100);
-  const prob = cls.prob_intensif === undefined || cls.prob_intensif === null
-    ? ""
-    : ` P(intensif): ${Math.round(cls.prob_intensif * 100)}%.`;
-  return `${prefix}: ${cls.label} (${confidence}%).${prob}`;
+  
+  // Always show both probabilities
+  let probText = "";
+  if (cls.prob_intensif !== undefined && cls.prob_intensif !== null) {
+    const prob_intensif = Math.round(cls.prob_intensif * 100);
+    const prob_extensif = 100 - prob_intensif;
+    probText = ` [Intensif: ${prob_intensif}% | Extensif: ${prob_extensif}%]`;
+  } else {
+    probText = " [Probabilités non disponibles]";
+  }
+  
+  return `${prefix}: ${cls.label} (${confidence}%).${probText}`;
 }
 
 function styleParcel(feature) {
@@ -195,15 +203,20 @@ function parcelPopup(feature) {
   const props = feature.properties || {};
   const predicted = props.model_prediction || "non disponible";
   const truth = props.cultivation_system || "inconnu";
-  const prob = props.prob_intensif === null || props.prob_intensif === undefined
-    ? ""
-    : `<br>P(intensif): ${Math.round(props.prob_intensif * 100)}%`;
+  
+  let probText = "";
+  if (props.prob_intensif !== null && props.prob_intensif !== undefined) {
+    const prob_intensif = Math.round(props.prob_intensif * 100);
+    const prob_extensif = 100 - prob_intensif;
+    probText = `<br>Probabilités: Intensif ${prob_intensif}% | Extensif ${prob_extensif}%`;
+  }
+  
   const area = Number(props.area_ha || 0);
 
   return `
     <strong>${props.name || props.id}</strong><br>
     Verite terrain: ${truth}<br>
-    Prediction modele: <strong>${predicted}</strong>${prob}<br>
+    Prediction modele: <strong>${predicted}</strong>${probText}<br>
     Source: ${props.model_source || "label terrain"}<br>
     ${props.governorate || ""}<br>
     ${area.toFixed(1)} ha

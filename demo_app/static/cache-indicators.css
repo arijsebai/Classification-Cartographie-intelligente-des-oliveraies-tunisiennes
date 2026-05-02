@@ -1,0 +1,173 @@
+/* Cache Indicators Styling */
+
+/* Legend for cache status */
+.cache-legend {
+  background: white;
+  padding: 12px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  font-size: 12px;
+  line-height: 1.6;
+  z-index: 1000;
+}
+
+.cache-legend strong {
+  font-weight: 600;
+}
+
+.cache-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0;
+}
+
+.cache-legend-swatch {
+  display: inline-block;
+  width: 20px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+/* Cache status badges */
+.cache-badge {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.cache-badge.hit {
+  background: #4ade80;
+  color: white;
+}
+
+.cache-badge.miss {
+  background: #ef4444;
+  color: white;
+}
+
+.cache-badge.loading {
+  background: #f59e0b;
+  color: white;
+}
+
+/* Tooltip styling for cache status */
+.cache-tooltip {
+  background: #1f2937;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.cache-tooltip::before {
+  border-top-color: #1f2937;
+}
+
+/* Status indicator in UI */
+.cache-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: #f3f4f6;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.cache-status.hit {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.cache-status.hit::before {
+  content: "✓";
+  font-weight: bold;
+}
+
+.cache-status.miss {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.cache-status.miss::before {
+  content: "?";
+  font-weight: bold;
+}
+
+/* Enhanced parcel layer styling */
+.parcel-cached {
+  stroke-width: 2.5;
+  stroke-dasharray: none;
+}
+
+.parcel-not-cached {
+  stroke-width: 1;
+  stroke-dasharray: 4, 2;
+  opacity: 0.7;
+}
+
+/* Status message styling */
+.status-with-cache {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.status-cache-indicator {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-left: 8px;
+}
+
+.status-cache-indicator.hit {
+  background: #4ade80;
+  color: white;
+}
+
+.status-cache-indicator.miss {
+  background: #ef4444;
+  color: white;
+}
+
+/* Cache info panel */
+.cache-info {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 8px 0;
+}
+
+.cache-info-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.cache-info-item:last-child {
+  border-bottom: none;
+}
+
+.cache-info-label {
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.cache-info-value {
+  font-weight: 600;
+  color: #1f2937;
+}

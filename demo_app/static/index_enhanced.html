@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EZZAYRA Olive Mapping Demo - Enhanced Cache Indicators</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
+    <link rel="stylesheet" href="/static/styles.css" />
+    <!-- NEW: Cache indicators styling -->
+    <link rel="stylesheet" href="/static/cache-indicators.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section id="map" aria-label="Carte interactive des oliveraies tunisiennes"></section>
+      <aside class="panel">
+        <div class="brand">
+          <span class="mark"></span>
+          <div>
+            <h1>EZZAYRA Olive Map</h1>
+            <p>Demo dessin et qualification parcellaire</p>
+          </div>
+        </div>
+
+        <div class="metric-grid">
+          <div>
+            <span class="label">Surface</span>
+            <strong id="areaValue">0 ha</strong>
+          </div>
+          <div>
+            <span class="label">Limite</span>
+            <strong id="limitValue">100 km2</strong>
+          </div>
+        </div>
+
+        <!-- Main status (existing) -->
+        <div id="status" class="status neutral">Dessine un polygone sur la carte.</div>
+        
+        <!-- NEW: Cache status indicator -->
+        <div id="cacheStatus" class="cache-info" style="display: none;">
+          <div class="cache-info-item">
+            <span class="cache-info-label">Statut Zone:</span>
+            <span class="cache-info-value" id="cacheStatusValue">—</span>
+          </div>
+          <div class="cache-info-item">
+            <span class="cache-info-label">Latence:</span>
+            <span class="cache-info-value" id="cacheLatencyValue">—</span>
+          </div>
+        </div>
+        
+        <div id="modelStatus" class="status neutral">Modele offline non charge.</div>
+        <button id="classifyButton" class="action-button" type="button" disabled>Analyse automatique</button>
+        <button id="sentinelButton" class="action-button secondary" type="button" disabled>Soumettre extraction openEO</button>
+
+        <div id="openeoPanel" class="workflow hidden">
+          <span class="label">Workflow openEO</span>
+          <div id="openeoJob" class="workflow-job">Aucune demande.</div>
+          <div class="workflow-actions">
+            <button id="runOpenEOButton" class="mini-button" type="button">Lancer openEO en arriere-plan</button>
+          </div>
+          <pre id="openeoLog" class="workflow-log"></pre>
+        </div>
+
+        <div class="legend">
+          <strong style="display:block;margin-bottom:8px;">📍 Parcels Précalculés</strong>
+          <div><span class="swatch" style="background:#0f8b8d;border:2px solid #0f8b8d;"></span>Intensif ✓</div>
+          <div><span class="swatch" style="background:#7a8f22;border:2px solid #7a8f22;"></span>Extensif ✓</div>
+          <hr style="margin:8px 0;opacity:0.3;">
+          <div style="font-size:11px;color:#666;">
+            <div>▬▬▬ Bordure épaisse = en cache</div>
+            <div>- - - Tiretée = à calculer</div>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+    <!-- NEW: Cache indicators functions -->
+    <script src="/static/cache-indicators.js"></script>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
+
+<!-- 
+  INTEGRATION INSTRUCTIONS:
+  
+  1. This enhanced HTML includes:
+     - cache-indicators.css for styling
+     - cache-indicators.js for utility functions
+     - Enhanced legend showing cache status visually
+     - New #cacheStatus div to show cache hit/miss
+  
+  2. Modify app.js to use cache functions:
+     - Replace styleParcel() with styleParcelWithCacheIndicator()
+     - Replace parcelPopup() with parcelPopupWithCacheStatus()
+     - Add cache status display in analyzeLayer()
+  
+  3. When a polygon is drawn:
+     - If cache hit (200 from /api/fast-analyze):
+       → Show "✓ En cache" with green badge
+       → Display latency
+     - If cache miss (404):
+       → Show "? Zone nouvelle" with red badge
+       → Trigger fallback to /api/analyze-polygon
+  
+  4. Visual cues on map:
+     - Thick solid borders = cached parcels
+     - Thin dashed borders = non-cached areas
+     - Green text on hover = "✓ Pré-calculée"
+     - Red text on hover = "? À calculer"
+-->

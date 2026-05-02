@@ -1,11 +1,11 @@
 {
-  "sentinel_root": "sentinel2_l2a/2025_05_06",
-  "geojson_root": "data_splits/ezzayra_oliviers_geojson",
-  "output_dir": "models/unet_resnet_sentinel2",
+  "sentinel_root": "Classification-Cartographie-intelligente-des-oliveraies-tunisiennes/sentinel2_l2a/2025_05_06",
+  "geojson_root": "Classification-Cartographie-intelligente-des-oliveraies-tunisiennes/data_splits/ezzayra_oliviers_geojson",
+  "output_dir": "Classification-Cartographie-intelligente-des-oliveraies-tunisiennes/models/unet_resnet_sentinel2",
   "encoder": "resnet34",
   "encoder_weights": "imagenet",
   "image_size": 256,
-  "epochs": 60,
+  "epochs": 30,
   "batch_size": 4,
   "lr": 0.0001,
   "num_workers": 0,
@@ -13,5 +13,5 @@
   "dice_weight": 0.5,
   "device": "cpu",
   "no_pretrained": false,
-  "mask_mode": "rasterize"
+  "mask_mode": "auto"
 }

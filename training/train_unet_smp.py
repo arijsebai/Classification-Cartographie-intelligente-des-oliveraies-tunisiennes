@@ -6,6 +6,7 @@ from pathlib import Path
 import numpy as np
 import rasterio
 from rasterio.features import rasterize
+from rasterio.warp import transform_geom
 import segmentation_models_pytorch as smp
 import torch
 import torch.nn.functional as F
@@ -121,8 +122,15 @@ class ParcelSegmentationDataset(Dataset):
             if image.shape[0] != BAND_COUNT:
                 raise ValueError(f"{image_path} has {image.shape[0]} bands, expected {BAND_COUNT}")
 
+            # Project GeoJSON geometry (WGS84) into the raster CRS before rasterizing.
+            try:
+                projected_geometry = transform_geom("EPSG:4326", src.crs, feature["geometry"])
+            except Exception:
+                # Fallback: if projection fails, use original geometry (may produce empty mask)
+                projected_geometry = feature["geometry"]
+
             rasterized_mask = rasterize(
-                [(feature["geometry"], 1)],
+                [(projected_geometry, 1)],
                 out_shape=(src.height, src.width),
                 transform=src.transform,
                 fill=0,

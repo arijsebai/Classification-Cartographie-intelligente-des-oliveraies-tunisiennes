@@ -212,9 +212,14 @@ async function loadParcels() {
   const response = await fetch("/api/parcels");
   const geojson = await response.json();
   const layer = L.geoJSON(geojson, {
-    style: styleParcel,
-    onEachFeature: (feature, layer) => layer.bindPopup(parcelPopup(feature)),
+    style: styleParcelWithCacheIndicator,
+    onEachFeature: (feature, layer) => {
+      layer.bindPopup(parcelPopupWithCacheStatus(feature));
+      try { addCacheStatusTooltip(map, layer); } catch(e) { /* ignore if helper missing */ }
+    },
   }).addTo(map);
+
+  try { addCacheLegendToMap(map); } catch(e) { /* ignore if helper missing */ }
 
   if (geojson.features?.length) {
     map.fitBounds(layer.getBounds(), { padding: [24, 24] });
@@ -265,6 +270,42 @@ async function analyzeLayer(layer) {
   setSentinelReady(false);
 
   const geometry = layer.toGeoJSON().geometry;
+  // Fast-path: try cached server-side prediction first
+  let fastLatencyMs = null;
+  try {
+    const t0 = Date.now();
+    const fastResp = await fetch("/api/fast-analyze", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ geometry }),
+    });
+    fastLatencyMs = Date.now() - t0;
+
+    if (fastResp.ok) {
+      const fastPayload = await fastResp.json();
+      const cls = fastPayload.classification;
+      setStatus(`Prediction cachee: ${cls.label} (parcel ${cls.matched_parcel_id})`, "ok");
+      currentGeometry = geometry;
+      sentinelButton.disabled = false;
+      classifyButton.disabled = false;
+
+      // update cacheStatus panel
+      try {
+        const cachePanel = document.getElementById('cacheStatus');
+        document.getElementById('cacheStatusValue').textContent = `✓ En cache (${cls.matched_parcel_id})`;
+        document.getElementById('cacheLatencyValue').textContent = `${fastLatencyMs} ms`;
+        cachePanel.style.display = 'block';
+        cachePanel.classList.remove('cache-miss');
+        cachePanel.classList.add('cache-hit');
+      } catch (e) {}
+
+      return; // skip full analysis
+    }
+  } catch (err) {
+    console.warn('Fast-path error', err);
+  }
+
+  const t1 = Date.now();
   const response = await fetch("/api/analyze-polygon", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -278,6 +319,17 @@ async function analyzeLayer(layer) {
     setSentinelReady(false);
     return;
   }
+
+  // update cacheStatus for fallback (miss)
+  try {
+    const totalLatency = (Date.now() - (typeof fastLatencyMs === 'number' ? (Date.now() - fastLatencyMs) : t1));
+    const cachePanel = document.getElementById('cacheStatus');
+    document.getElementById('cacheStatusValue').textContent = `? Zone nouvelle`;
+    document.getElementById('cacheLatencyValue').textContent = `${totalLatency} ms`;
+    cachePanel.style.display = 'block';
+    cachePanel.classList.remove('cache-hit');
+    cachePanel.classList.add('cache-miss');
+  } catch (e) {}
 
   currentGeometry = geometry;
   sentinelButton.disabled = false;

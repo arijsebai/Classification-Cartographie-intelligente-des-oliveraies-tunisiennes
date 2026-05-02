@@ -24,6 +24,7 @@ LOCAL_CLASSIFY_SCRIPT = ROOT / "scripts" / "classify_polygon_local.py"
 SPATIAL_CV_PREDICTIONS_PATH = ROOT / "models" / "spatial_cv_classifier" / "spatial_cv_predictions.csv"
 CULTIVATION_PREDICTIONS_PATH = ROOT / "models" / "cultivation_classifier" / "predictions.csv"
 SUBMISSIONS_DIR = ROOT / "demo_app" / "submissions"
+LATENCY_LOG = ROOT / "demo_app" / "latency.log"
 SENTINEL_ROOT = ROOT / "sentinel2_l2a" / "2025_05_06"
 INTENSIF_THRESHOLD = 0.2
 OPENEO_ACTIONS = {"full-workflow"}
@@ -158,6 +159,8 @@ def point_in_polygon(point: list[float], geometry: dict[str, Any]) -> bool:
 
 
 def find_matching_offline_parcel(geometry: dict[str, Any]) -> dict[str, Any] | None:
+    
+    
     drawn_centroid = geometry_centroid(geometry)
     drawn_point = [drawn_centroid["lng"], drawn_centroid["lat"]]
     parcels_data = load_parcels_with_predictions()
@@ -732,6 +735,7 @@ def model_summary() -> dict[str, Any]:
 
 @app.post("/api/analyze-polygon")
 def analyze_polygon(payload: PolygonRequest) -> dict[str, Any]:
+    start_ts = time.time()
     area_m2 = polygon_area_m2(payload.geometry)
     area_km2 = area_m2 / 1_000_000.0
     area_ha = area_m2 / 10_000.0
@@ -755,6 +759,7 @@ def analyze_polygon(payload: PolygonRequest) -> dict[str, Any]:
         "centroid": centroid,
         "classification": demo_classify(payload.geometry, area_ha),
         "message": "Polygon accepted for live demo inference.",
+        "latency_s": round(time.time() - start_ts, 3),
     }
 
 
@@ -830,6 +835,27 @@ async def classify_sentinel_local(payload: PolygonRequest) -> dict[str, Any]:
     }
 
 
+@app.post("/api/fast-analyze")
+def fast_analyze(payload: PolygonRequest) -> dict[str, Any]:
+    """Fast path: return cached prediction if the drawn polygon overlaps an existing parcel."""
+    matching = find_matching_offline_parcel(payload.geometry)
+    if matching is None:
+        raise HTTPException(status_code=404, detail="No cached parcel matches this geometry.")
+
+    props = matching.get("properties", {})
+    prediction = {
+        "method": "fast_cached",
+        "matched_parcel_id": props.get("id"),
+        "label": props.get("model_prediction") or props.get("cultivation_system"),
+        "prob_intensif": props.get("prob_intensif"),
+        "confidence": round(float(props.get("prob_intensif")), 3) if props.get("prob_intensif") is not None else None,
+        "ground_truth": props.get("cultivation_system"),
+        "note": "Returned cached prediction for overlapping parcel.",
+    }
+
+    return {"found": True, "classification": prediction}
+
+
 @app.get("/api/sentinel-analysis/{job_id}")
 def sentinel_analysis_status(job_id: str) -> dict[str, Any]:
     path = SUBMISSIONS_DIR / f"{job_id}.json"
@@ -856,3 +882,67 @@ def run_openeo_action(job_id: str, action: str) -> dict[str, Any]:
 @app.get("/api/openeo/{job_id}/{action}")
 def get_openeo_action_status(job_id: str, action: str) -> dict[str, Any]:
     return openeo_status(job_id, action)
+
+
+@app.get("/api/benchmark")
+def benchmark_endpoint(n_runs: int = 10) -> dict[str, Any]:
+    """Run N latency measurements on /api/fast-analyze and /api/analyze-polygon."""
+    if n_runs < 1 or n_runs > 100:
+        raise HTTPException(status_code=400, detail="n_runs must be between 1 and 100")
+
+    # Get a test geometry: centroid of first parcel
+    parcels_data = load_parcels_with_predictions()
+    if not parcels_data.get("features"):
+        raise HTTPException(status_code=404, detail="No parcels loaded for benchmark")
+
+    test_geom = parcels_data["features"][0]["geometry"]
+
+    fast_latencies = []
+    full_latencies = []
+
+    for i in range(n_runs):
+        # Measure fast-analyze
+        t0 = time.time()
+        matching = find_matching_offline_parcel(test_geom)
+        fast_lat = time.time() - t0
+        fast_latencies.append(fast_lat)
+
+        # Measure analyze-polygon (demo_classify)
+        area_m2 = polygon_area_m2(test_geom)
+        area_ha = area_m2 / 10_000.0
+        t0 = time.time()
+        demo_classify(test_geom, area_ha)
+        full_lat = time.time() - t0
+        full_latencies.append(full_lat)
+
+    fast_sorted = sorted(fast_latencies)
+    full_sorted = sorted(full_latencies)
+
+    def percentile(arr, p):
+        idx = int(len(arr) * (p / 100.0))
+        return arr[min(idx, len(arr) - 1)]
+
+    result = {
+        "n_runs": n_runs,
+        "fast_analyze": {
+            "p50_ms": round(percentile(fast_sorted, 50) * 1000, 2),
+            "p95_ms": round(percentile(fast_sorted, 95) * 1000, 2),
+            "p99_ms": round(percentile(fast_sorted, 99) * 1000, 2),
+            "max_ms": round(max(fast_latencies) * 1000, 2),
+        },
+        "full_analyze": {
+            "p50_ms": round(percentile(full_sorted, 50) * 1000, 2),
+            "p95_ms": round(percentile(full_sorted, 95) * 1000, 2),
+            "p99_ms": round(percentile(full_sorted, 99) * 1000, 2),
+            "max_ms": round(max(full_latencies) * 1000, 2),
+        },
+    }
+
+    # Log result
+    LATENCY_LOG.parent.mkdir(parents=True, exist_ok=True)
+    with LATENCY_LOG.open("a", encoding="utf-8") as f:
+        f.write(
+            f"{time.strftime('%Y-%m-%d %H:%M:%S')} | n={n_runs} | fast_p99={result['fast_analyze']['p99_ms']}ms | full_p99={result['full_analyze']['p99_ms']}ms\n"
+        )
+
+    return result

@@ -1,0 +1,796 @@
+{
+  "train_records": 35,
+  "val_records": 7,
+  "test_records": 7,
+  "labels": [
+    "extensif",
+    "intensif"
+  ],
+  "config": {
+    "image_root": "C:\\Users\\SP\\Desktop\\Hack The Harvest\\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\\sentinel2_l2a\\2025_05_06",
+    "temporal_root": "C:\\Users\\SP\\Desktop\\Hack The Harvest\\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\\sentinel2_l2a\\from_wiem_branch",
+    "image_pattern": "{cultivation_system}__{id}.tif",
+    "cv_folds": 3,
+    "n_estimators": 300,
+    "max_depth": 12,
+    "min_samples_leaf": 1,
+    "n_jobs": 1,
+    "random_state": 42
+  },
+  "cv_results": [
+    {
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "confusion_matrix": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          11
+        ]
+      ],
+      "labels": [
+        "extensif",
+        "intensif"
+      ],
+      "classification_report": {
+        "extensif": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 1.0
+        },
+        "intensif": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 11.0
+        },
+        "accuracy": 1.0,
+        "macro avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 12.0
+        },
+        "weighted avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 12.0
+        }
+      },
+      "fold": 1,
+      "train_size": 23,
+      "val_size": 12
+    },
+    {
+      "accuracy": 0.7272727272727273,
+      "macro_f1": 0.42105263157894735,
+      "confusion_matrix": [
+        [
+          8,
+          0
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "labels": [
+        "extensif",
+        "intensif"
+      ],
+      "classification_report": {
+        "extensif": {
+          "precision": 0.7272727272727273,
+          "recall": 1.0,
+          "f1-score": 0.8421052631578947,
+          "support": 8.0
+        },
+        "intensif": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 3.0
+        },
+        "accuracy": 0.7272727272727273,
+        "macro avg": {
+          "precision": 0.36363636363636365,
+          "recall": 0.5,
+          "f1-score": 0.42105263157894735,
+          "support": 11.0
+        },
+        "weighted avg": {
+          "precision": 0.5289256198347108,
+          "recall": 0.7272727272727273,
+          "f1-score": 0.6124401913875598,
+          "support": 11.0
+        }
+      },
+      "fold": 2,
+      "train_size": 24,
+      "val_size": 11
+    },
+    {
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "confusion_matrix": [
+        [
+          6,
+          0
+        ],
+        [
+          0,
+          6
+        ]
+      ],
+      "labels": [
+        "extensif",
+        "intensif"
+      ],
+      "classification_report": {
+        "extensif": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 6.0
+        },
+        "intensif": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 6.0
+        },
+        "accuracy": 1.0,
+        "macro avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 12.0
+        },
+        "weighted avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 12.0
+        }
+      },
+      "fold": 3,
+      "train_size": 23,
+      "val_size": 12
+    }
+  ],
+  "holdout_val_metrics": {
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "confusion_matrix": [
+      [
+        4,
+        0
+      ],
+      [
+        0,
+        3
+      ]
+    ],
+    "labels": [
+      "extensif",
+      "intensif"
+    ],
+    "classification_report": {
+      "extensif": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 4.0
+      },
+      "intensif": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 3.0
+      },
+      "accuracy": 1.0,
+      "macro avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 7.0
+      },
+      "weighted avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 7.0
+      }
+    }
+  },
+  "test_metrics": {
+    "accuracy": 0.5714285714285714,
+    "macro_f1": 0.36363636363636365,
+    "confusion_matrix": [
+      [
+        4,
+        0
+      ],
+      [
+        3,
+        0
+      ]
+    ],
+    "labels": [
+      "extensif",
+      "intensif"
+    ],
+    "classification_report": {
+      "extensif": {
+        "precision": 0.5714285714285714,
+        "recall": 1.0,
+        "f1-score": 0.7272727272727273,
+        "support": 4.0
+      },
+      "intensif": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 3.0
+      },
+      "accuracy": 0.5714285714285714,
+      "macro avg": {
+        "precision": 0.2857142857142857,
+        "recall": 0.5,
+        "f1-score": 0.36363636363636365,
+        "support": 7.0
+      },
+      "weighted avg": {
+        "precision": 0.32653061224489793,
+        "recall": 0.5714285714285714,
+        "f1-score": 0.4155844155844156,
+        "support": 7.0
+      }
+    }
+  },
+  "feature_importances": [
+    {
+      "feature": "ndmi_mean",
+      "importance": 0.05137549366500999
+    },
+    {
+      "feature": "ndmi_p10",
+      "importance": 0.049999999999999975
+    },
+    {
+      "feature": "fapar_p90",
+      "importance": 0.0474849013865571
+    },
+    {
+      "feature": "ndre_p90",
+      "importance": 0.04695660634364663
+    },
+    {
+      "feature": "ndvi_mean",
+      "importance": 0.04666666666666667
+    },
+    {
+      "feature": "ndmi_p90",
+      "importance": 0.04109058006216973
+    },
+    {
+      "feature": "fapar_mean",
+      "importance": 0.03999999999999997
+    },
+    {
+      "feature": "swir1_p10",
+      "importance": 0.03722636381564989
+    },
+    {
+      "feature": "ndre_std",
+      "importance": 0.03695159431425279
+    },
+    {
+      "feature": "ndvi_p90",
+      "importance": 0.036945551128818054
+    },
+    {
+      "feature": "ndre_mean",
+      "importance": 0.03666666666666667
+    },
+    {
+      "feature": "canopy_fraction_ndvi_035",
+      "importance": 0.03421587750539294
+    },
+    {
+      "feature": "lai_p10",
+      "importance": 0.03277556440903053
+    },
+    {
+      "feature": "fapar_std",
+      "importance": 0.030285562843702363
+    },
+    {
+      "feature": "bsi_mean",
+      "importance": 0.029999999999999995
+    },
+    {
+      "feature": "swir1_mean",
+      "importance": 0.02918130213569752
+    },
+    {
+      "feature": "bsi_p10",
+      "importance": 0.02760841593515693
+    },
+    {
+      "feature": "ndwi_std",
+      "importance": 0.02720132743362831
+    },
+    {
+      "feature": "ndwi_p10",
+      "importance": 0.023624338624338628
+    },
+    {
+      "feature": "lai_p90",
+      "importance": 0.023613588916302906
+    },
+    {
+      "feature": "lai_mean",
+      "importance": 0.02333333333333332
+    },
+    {
+      "feature": "fapar_p10",
+      "importance": 0.022768709673618635
+    },
+    {
+      "feature": "ndvi_glcm_contrast",
+      "importance": 0.022147668596542887
+    },
+    {
+      "feature": "bsi_p90",
+      "importance": 0.02028126984126984
+    },
+    {
+      "feature": "ndvi_std",
+      "importance": 0.01999999999999999
+    },
+    {
+      "feature": "swir1_p90",
+      "importance": 0.018852941374003833
+    },
+    {
+      "feature": "ndvi_p10",
+      "importance": 0.016385040650406496
+    },
+    {
+      "feature": "ndre_p10",
+      "importance": 0.016103096551692085
+    },
+    {
+      "feature": "ndmi_max",
+      "importance": 0.012415387155357432
+    },
+    {
+      "feature": "bsi_std",
+      "importance": 0.008565136079531478
+    },
+    {
+      "feature": "green_p90",
+      "importance": 0.008225476930686985
+    },
+    {
+      "feature": "red_mean",
+      "importance": 0.007744536837333237
+    },
+    {
+      "feature": "red_p90",
+      "importance": 0.007227871939736352
+    },
+    {
+      "feature": "swir1_min",
+      "importance": 0.006948292682926832
+    },
+    {
+      "feature": "ndwi_mean",
+      "importance": 0.006666666666666668
+    },
+    {
+      "feature": "lai_std",
+      "importance": 0.006300300300300303
+    },
+    {
+      "feature": "swir1_max",
+      "importance": 0.006069138136718661
+    },
+    {
+      "feature": "ndvi_glcm_dissimilarity",
+      "importance": 0.006045537143288111
+    },
+    {
+      "feature": "red_min",
+      "importance": 0.005097051323415255
+    },
+    {
+      "feature": "nir_mean",
+      "importance": 0.003749326008370352
+    },
+    {
+      "feature": "bsi_min",
+      "importance": 0.0033333333333333322
+    },
+    {
+      "feature": "blue_mean",
+      "importance": 0.0030517073170731705
+    },
+    {
+      "feature": "nir_p10",
+      "importance": 0.003043393656353379
+    },
+    {
+      "feature": "blue_p10",
+      "importance": 0.0027801953389420798
+    },
+    {
+      "feature": "red_p10",
+      "importance": 0.0023868945740656553
+    },
+    {
+      "feature": "canopy_fraction_ndvi_05",
+      "importance": 0.002145404663923192
+    },
+    {
+      "feature": "blue_std",
+      "importance": 0.0015254251460537528
+    },
+    {
+      "feature": "seasonal_ndre_mean_p90",
+      "importance": 0.001263240801487068
+    },
+    {
+      "feature": "bsi_max",
+      "importance": 0.0011046168829951727
+    },
+    {
+      "feature": "seasonal_ndvi_mean_mean",
+      "importance": 0.0009179461779758976
+    },
+    {
+      "feature": "green_p10",
+      "importance": 0.0006266845357754475
+    },
+    {
+      "feature": "high_season_ndvi_glcm_contrast",
+      "importance": 0.000366366366366364
+    },
+    {
+      "feature": "ndwi_p90",
+      "importance": 0.0003536422802477894
+    },
+    {
+      "feature": "fapar_max",
+      "importance": 0.0003403168365467327
+    },
+    {
+      "feature": "ndvi_min",
+      "importance": 0.0002968703204552274
+    },
+    {
+      "feature": "nir_glcm_homogeneity",
+      "importance": 0.00027906081601231943
+    },
+    {
+      "feature": "blue_max",
+      "importance": 0.00027888446215140294
+    },
+    {
+      "feature": "nir_glcm_dissimilarity",
+      "importance": 0.0002777777777777814
+    },
+    {
+      "feature": "ndre_min",
+      "importance": 0.0002777250585183819
+    },
+    {
+      "feature": "red_max",
+      "importance": 0.0002777250585183751
+    },
+    {
+      "feature": "blue_p90",
+      "importance": 0.00027560551754100875
+    },
+    {
+      "feature": "seasonal_fapar_mean_std",
+      "importance": 1.0154320529320134e-17
+    },
+    {
+      "feature": "green_max",
+      "importance": 1.005286467985912e-17
+    },
+    {
+      "feature": "green_std",
+      "importance": 9.298337242900623e-18
+    },
+    {
+      "feature": "lai_min",
+      "importance": 8.760568875437385e-18
+    },
+    {
+      "feature": "nir_std",
+      "importance": 8.418829433293308e-18
+    },
+    {
+      "feature": "mask_pixel_count",
+      "importance": 6.85954001841853e-18
+    },
+    {
+      "feature": "ndvi_glcm_correlation",
+      "importance": 5.9942102023200205e-18
+    },
+    {
+      "feature": "seasonal_fapar_mean_p90",
+      "importance": 5.4902476327406225e-18
+    },
+    {
+      "feature": "nir_glcm_correlation",
+      "importance": 5.0324721391236485e-18
+    },
+    {
+      "feature": "nir_glcm_contrast",
+      "importance": 4.9846673414576725e-18
+    },
+    {
+      "feature": "ndre_max",
+      "importance": 4.948286755474474e-18
+    },
+    {
+      "feature": "ndwi_max",
+      "importance": 4.8511919119490515e-18
+    },
+    {
+      "feature": "ndwi_min",
+      "importance": 3.5639768109343764e-18
+    },
+    {
+      "feature": "ndmi_std",
+      "importance": 3.46275489617277e-18
+    },
+    {
+      "feature": "seasonal_ndvi_mean_max",
+      "importance": 3.4042511066966284e-18
+    },
+    {
+      "feature": "green_mean",
+      "importance": 3.3735197871066135e-18
+    },
+    {
+      "feature": "seasonal_ndvi_mean_p90",
+      "importance": 3.3306690738754683e-18
+    },
+    {
+      "feature": "blue_min",
+      "importance": 3.229300884670562e-18
+    },
+    {
+      "feature": "ndmi_min",
+      "importance": 2.7451238163703128e-18
+    },
+    {
+      "feature": "green_min",
+      "importance": 2.2204460492503116e-18
+    },
+    {
+      "feature": "nir_glcm_energy",
+      "importance": 2.166341613352399e-18
+    },
+    {
+      "feature": "ndvi_glcm_energy",
+      "importance": 2.1190778600454066e-18
+    },
+    {
+      "feature": "high_season_nir_glcm_correlation",
+      "importance": 2.118188665403258e-18
+    },
+    {
+      "feature": "high_season_nir_glcm_dissimilarity",
+      "importance": 1.7822001184772237e-18
+    },
+    {
+      "feature": "fapar_min",
+      "importance": 1.6393062904098643e-18
+    },
+    {
+      "feature": "seasonal_ndvi_mean_std",
+      "importance": 1.6361181415528615e-18
+    },
+    {
+      "feature": "nir_p90",
+      "importance": 1.4510809707820037e-18
+    },
+    {
+      "feature": "seasonal_ndwi_mean_mean",
+      "importance": 1.451080970782002e-18
+    },
+    {
+      "feature": "nir_min",
+      "importance": 1.4127185733636045e-18
+    },
+    {
+      "feature": "ndvi_max",
+      "importance": 1.412718573363604e-18
+    },
+    {
+      "feature": "ndwi_seasonal_amplitude",
+      "importance": 1.1881334123181492e-18
+    },
+    {
+      "feature": "seasonal_ndre_mean_std",
+      "importance": 1.1659997794508212e-18
+    },
+    {
+      "feature": "seasonal_fapar_mean_max",
+      "importance": 1.0590943327016292e-18
+    },
+    {
+      "feature": "red_std",
+      "importance": 9.339305216601033e-19
+    },
+    {
+      "feature": "fapar_seasonal_amplitude",
+      "importance": 0.0
+    },
+    {
+      "feature": "high_season_ndvi_glcm_correlation",
+      "importance": 0.0
+    },
+    {
+      "feature": "high_season_ndvi_glcm_dissimilarity",
+      "importance": 0.0
+    },
+    {
+      "feature": "high_season_ndvi_glcm_energy",
+      "importance": 0.0
+    },
+    {
+      "feature": "high_season_ndvi_glcm_homogeneity",
+      "importance": 0.0
+    },
+    {
+      "feature": "high_season_nir_glcm_contrast",
+      "importance": 0.0
+    },
+    {
+      "feature": "high_season_nir_glcm_energy",
+      "importance": 0.0
+    },
+    {
+      "feature": "high_season_nir_glcm_homogeneity",
+      "importance": 0.0
+    },
+    {
+      "feature": "high_season_texture_available",
+      "importance": 0.0
+    },
+    {
+      "feature": "lai_max",
+      "importance": 0.0
+    },
+    {
+      "feature": "lai_seasonal_amplitude",
+      "importance": 0.0
+    },
+    {
+      "feature": "ndre_real_available",
+      "importance": 0.0
+    },
+    {
+      "feature": "ndre_seasonal_amplitude",
+      "importance": 0.0
+    },
+    {
+      "feature": "ndvi_glcm_homogeneity",
+      "importance": 0.0
+    },
+    {
+      "feature": "ndvi_seasonal_amplitude",
+      "importance": 0.0
+    },
+    {
+      "feature": "nir_max",
+      "importance": 0.0
+    },
+    {
+      "feature": "parcel_area_ha",
+      "importance": 0.0
+    },
+    {
+      "feature": "seasonal_fapar_mean_mean",
+      "importance": 0.0
+    },
+    {
+      "feature": "seasonal_fapar_mean_min",
+      "importance": 0.0
+    },
+    {
+      "feature": "seasonal_fapar_mean_p10",
+      "importance": 0.0
+    },
+    {
+      "feature": "seasonal_lai_mean_max",
+      "importance": 0.0
+    },
+    {
+      "feature": "seasonal_lai_mean_mean",
+      "importance": 0.0
+    },
+    {
+      "feature": "seasonal_lai_mean_min",
+      "importance": 0.0
+    },
+    {
+      "feature": "seasonal_lai_mean_p10",
+      "importance": 0.0
+    },
+    {
+      "feature": "seasonal_lai_mean_p90",
+      "importance": 0.0
+    },
+    {
+      "feature": "seasonal_lai_mean_std",
+      "importance": 0.0
+    },
+    {
+      "feature": "seasonal_ndre_mean_max",
+      "importance": 0.0
+    },
+    {
+      "feature": "seasonal_ndre_mean_mean",
+      "importance": 0.0
+    },
+    {
+      "feature": "seasonal_ndre_mean_min",
+      "importance": 0.0
+    },
+    {
+      "feature": "seasonal_ndre_mean_p10",
+      "importance": 0.0
+    },
+    {
+      "feature": "seasonal_ndvi_mean_min",
+      "importance": 0.0
+    },
+    {
+      "feature": "seasonal_ndvi_mean_p10",
+      "importance": 0.0
+    },
+    {
+      "feature": "seasonal_ndwi_mean_max",
+      "importance": 0.0
+    },
+    {
+      "feature": "seasonal_ndwi_mean_min",
+      "importance": 0.0
+    },
+    {
+      "feature": "seasonal_ndwi_mean_p10",
+      "importance": 0.0
+    },
+    {
+      "feature": "seasonal_ndwi_mean_p90",
+      "importance": 0.0
+    },
+    {
+      "feature": "seasonal_ndwi_mean_std",
+      "importance": 0.0
+    },
+    {
+      "feature": "seasonal_obs_count",
+      "importance": 0.0
+    },
+    {
+      "feature": "swir1_std",
+      "importance": 0.0
+    }
+  ],
+  "model_path": "models\\classification_temporal_hs\\random_forest.joblib",
+  "feature_csv": "models\\classification_temporal_hs\\features.csv"
+}

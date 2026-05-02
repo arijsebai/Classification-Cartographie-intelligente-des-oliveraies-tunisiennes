@@ -1,5 +1,6 @@
 import argparse
 import json
+import os
 import re
 import webbrowser
 from pathlib import Path
@@ -20,6 +21,11 @@ def parse_args():
         "--input",
         default="data_splits/ezzayra_oliviers_geojson",
         help="Directory containing train.geojson, val.geojson and test.geojson.",
+    )
+    parser.add_argument(
+        "--input-geojson",
+        default=None,
+        help="Single GeoJSON FeatureCollection to process, for example demo_app/submissions/submissions.geojson.",
     )
     parser.add_argument(
         "--splits",
@@ -53,9 +59,34 @@ def parse_args():
     )
     parser.add_argument(
         "--auth-method",
-        choices=["device", "auth-code"],
+        choices=["device", "auth-code", "password"],
         default="device",
-        help="Authentication method. Use auth-code if device login stays pending.",
+        help="Authentication method. Use password for non-interactive login/password auth.",
+    )
+    parser.add_argument(
+        "--provider-id",
+        default=os.environ.get("OPENEO_AUTH_PROVIDER_ID"),
+        help="OIDC provider id. Defaults to OPENEO_AUTH_PROVIDER_ID if set.",
+    )
+    parser.add_argument(
+        "--client-id",
+        default=os.environ.get("OPENEO_AUTH_CLIENT_ID"),
+        help="OIDC client id. Defaults to OPENEO_AUTH_CLIENT_ID if set.",
+    )
+    parser.add_argument(
+        "--client-secret",
+        default=os.environ.get("OPENEO_AUTH_CLIENT_SECRET"),
+        help="OIDC client secret. Defaults to OPENEO_AUTH_CLIENT_SECRET if set.",
+    )
+    parser.add_argument(
+        "--username",
+        default=os.environ.get("OPENEO_AUTH_USERNAME"),
+        help="Copernicus username. Defaults to OPENEO_AUTH_USERNAME if set.",
+    )
+    parser.add_argument(
+        "--password",
+        default=os.environ.get("OPENEO_AUTH_PASSWORD"),
+        help="Copernicus password. Defaults to OPENEO_AUTH_PASSWORD if set.",
     )
     parser.add_argument(
         "--no-browser",
@@ -112,7 +143,29 @@ def authenticate(connection, args):
         )
         return
 
+    if args.auth_method == "password":
+        if not args.username or not args.password:
+            raise ValueError(
+                "--username and --password are required for --auth-method password, or set OPENEO_AUTH_USERNAME and OPENEO_AUTH_PASSWORD."
+            )
+        if not args.client_id:
+            raise ValueError(
+                "This backend does not support basic authentication. For --auth-method password you must also provide an OIDC client id (and optionally client secret) via --client-id/--client-secret or OPENEO_AUTH_CLIENT_ID/OPENEO_AUTH_CLIENT_SECRET."
+            )
+        connection.authenticate_oidc_resource_owner_password_credentials(
+            username=args.username,
+            password=args.password,
+            provider_id=args.provider_id,
+            client_id=args.client_id,
+            client_secret=args.client_secret,
+            store_refresh_token=True,
+        )
+        return
+
     connection.authenticate_oidc(
+        provider_id=args.provider_id,
+        client_id=args.client_id,
+        client_secret=args.client_secret,
         max_poll_time=args.auth_timeout,
         display=make_auth_display(open_browser=not args.no_browser),
     )
@@ -213,6 +266,7 @@ def build_parcel_cube(connection, feature, start_date, end_date, max_cloud_cover
 def main():
     args = parse_args()
     input_dir = Path(args.input)
+    input_geojson = Path(args.input_geojson) if args.input_geojson else None
     start_date = f"{args.year}-05-01"
     end_date = f"{args.year}-06-30"
 
@@ -225,19 +279,23 @@ def main():
     start_blocked = False
     selected_splits = tuple(split.strip() for split in args.splits.split(",") if split.strip())
 
-    for split in selected_splits:
-        if split not in SPLITS:
-            raise ValueError(f"Unknown split {split!r}. Expected one of {SPLITS}.")
+    if input_geojson is not None:
+        feature_groups = [("demo", read_feature_collection(input_geojson))]
+    else:
+        feature_groups = []
+        for split in selected_splits:
+            if split not in SPLITS:
+                raise ValueError(f"Unknown split {split!r}. Expected one of {SPLITS}.")
+            feature_groups.append((split, read_feature_collection(input_dir / f"{split}.geojson")))
 
-        features = read_feature_collection(input_dir / f"{split}.geojson")
-
+    for split, features in feature_groups:
         for feature in features:
             if args.limit is not None and features_seen >= args.limit:
                 break
 
             props = feature["properties"]
-            parcel_id = safe_name(props["id"])
-            system = safe_name(props["cultivation_system"])
+            parcel_id = safe_name(props.get("id") or props.get("job_id") or f"feature_{features_seen + 1}")
+            system = safe_name(props.get("cultivation_system") or props.get("system") or "unknown")
             title = f"{split}__{system}__{parcel_id}__{args.year}__05_06__s2_l2a"
             if args.export_region == "bbox":
                 title = f"{title}__bboxbuf{str(args.buffer_deg).replace('.', 'p')}"
@@ -281,8 +339,8 @@ def main():
             created_jobs.append(
                 {
                     "split": split,
-                    "id": props["id"],
-                    "cultivation_system": props["cultivation_system"],
+                    "id": props.get("id") or props.get("job_id") or f"feature_{features_seen + 1}",
+                    "cultivation_system": props.get("cultivation_system") or props.get("system") or "unknown",
                     "governorate": props.get("governorate"),
                     "zone_id": props.get("zone_id"),
                     "job_id": job.job_id,
@@ -304,7 +362,9 @@ def main():
             break
 
     default_manifest = "openeo_jobs_manifest_bbox.json" if args.export_region == "bbox" else "openeo_jobs_manifest.json"
-    if selected_splits != SPLITS:
+    if input_geojson is not None:
+        default_manifest = "openeo_jobs_manifest_demo.json"
+    elif selected_splits != SPLITS:
         split_suffix = "_".join(selected_splits)
         default_manifest = default_manifest.replace(".json", f"_{split_suffix}.json")
     manifest_path = Path(args.manifest or default_manifest)

@@ -153,6 +153,46 @@ sentinel2_l2a/
     test/
 ```
 
+## 5b. Polygones dessines dans la demo
+
+Quand la demo affiche une demande comme `demo_...`, elle a seulement enregistre le polygone dans :
+
+```text
+demo_app/submissions/
+```
+
+Pour obtenir la vraie classification Sentinel-2 de ces polygones, exporter d'abord les demandes en GeoJSON :
+
+```powershell
+python scripts\export_demo_submissions_geojson.py
+```
+
+Pour exporter une seule demande :
+
+```powershell
+python scripts\export_demo_submissions_geojson.py --job-id demo_1777742534_27532 --output demo_app/submissions/demo_1777742534_27532.geojson
+```
+
+Puis creer et demarrer les jobs openEO a partir de ce GeoJSON :
+
+```powershell
+python scripts\download_sentinel2_openeo.py --input-geojson demo_app/submissions/submissions.geojson --manifest openeo_jobs_manifest_demo.json --start-jobs --auth-method device --auth-timeout 1800 --no-browser
+```
+
+Ou pour une seule demande exportee :
+
+```powershell
+python scripts\download_sentinel2_openeo.py --input-geojson demo_app/submissions/demo_1777742534_27532.geojson --manifest openeo_jobs_manifest_demo_1777742534_27532.json --start-jobs --auth-method device --auth-timeout 1800 --no-browser
+```
+
+Quand les jobs sont `finished`, telecharger les GeoTIFF :
+
+```powershell
+python scripts\download_openeo_results.py --manifest openeo_jobs_manifest_demo.json --output sentinel2_l2a/2025_05_06 --auth-method device --auth-timeout 1800 --no-browser
+```
+
+Ensuite, dans la demo, clique de nouveau sur `Analyse automatique` pour afficher la vraie classification Sentinel-2.
+
 ## 6. Changer l'annee
 
 Exemple pour 2024 :

@@ -65,9 +65,9 @@ b11_glcm_dissimilarity,7.939776782167782e-19
 b08_glcm_energy,7.558056744563562e-19
 ndre_proxy_min,7.524844944681615e-19
 b11_glcm_energy,7.0776717819853725e-19
-b11_glcm_ASM,0.0
-fapar_proxy_min,0.0
-ndre_proxy_max,0.0
-ndvi_min,0.0
-seasonal_amplitude_available,0.0
 bbox_height_deg,0.0
+ndvi_min,0.0
+ndre_proxy_max,0.0
+fapar_proxy_min,0.0
+b11_glcm_ASM,0.0
+seasonal_amplitude_available,0.0

@@ -1,0 +1,14 @@
+
+$ C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\.venv\Scripts\python.exe scripts/export_demo_submissions_geojson.py --job-id demo_1777743512_470714 --output demo_app\submissions\demo_1777743512_470714.geojson
+{
+  "output": "demo_app\\submissions\\demo_1777743512_470714.geojson",
+  "count": 1
+}
+Exit code: 0
+
+$ C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\.venv\Scripts\python.exe scripts/download_sentinel2_openeo.py --input-geojson demo_app\submissions\demo_1777743512_470714.geojson --manifest openeo_jobs_manifest_demo_1777743512_470714.json --start-jobs --auth-method device --auth-timeout 1800 --no-browser
+Traceback (most recent call last):
+  File "C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\scripts\download_sentinel2_openeo.py", line 7, in <module>
+    import openeo
+ModuleNotFoundError: No module named 'openeo'
+Exit code: 1

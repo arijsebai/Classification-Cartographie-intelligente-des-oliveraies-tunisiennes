@@ -1,0 +1,35 @@
+{
+  "job_id": "demo_1777740861_948502",
+  "status": "queued",
+  "created_at": "2026-05-02T16:54:21Z",
+  "area_km2": 33.842,
+  "area_ha": 3384.19,
+  "centroid": {
+    "lat": 35.736918333333335,
+    "lng": 10.072174333333335
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          10.007172,
+          35.755492
+        ],
+        [
+          10.155487,
+          35.747693
+        ],
+        [
+          10.053864,
+          35.70757
+        ],
+        [
+          10.007172,
+          35.755492
+        ]
+      ]
+    ]
+  },
+  "next_step": "Run scripts/export_demo_submissions_geojson.py, then use the GeoJSON as input for Sentinel-2 openEO extraction."
+}

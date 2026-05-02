@@ -1,0 +1,40 @@
+{
+  "job_id": "demo_1777744345_940869",
+  "status": "queued",
+  "created_at": "2026-05-02T17:52:25Z",
+  "area_km2": 84.221,
+  "area_ha": 8422.05,
+  "centroid": {
+    "lat": 35.431193,
+    "lng": 8.964843666666667
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          8.85498,
+          35.465499
+        ],
+        [
+          9.074707,
+          35.447607
+        ],
+        [
+          8.964844,
+          35.380473
+        ],
+        [
+          8.85498,
+          35.465499
+        ]
+      ]
+    ]
+  },
+  "next_step": "Export this submission to GeoJSON, create/start openEO jobs, download GeoTIFFs, then rerun automatic analysis.",
+  "commands": [
+    "python scripts\\export_demo_submissions_geojson.py --job-id demo_1777744345_940869 --output demo_app\\submissions\\demo_1777744345_940869.geojson",
+    "python scripts\\download_sentinel2_openeo.py --input-geojson demo_app\\submissions\\demo_1777744345_940869.geojson --manifest openeo_jobs_manifest_demo_1777744345_940869.json --start-jobs --auth-method device --auth-timeout 1800 --no-browser",
+    "python scripts\\download_openeo_results.py --manifest openeo_jobs_manifest_demo_1777744345_940869.json --output sentinel2_l2a\\2025_05_06 --auth-method device --auth-timeout 1800 --no-browser"
+  ]
+}

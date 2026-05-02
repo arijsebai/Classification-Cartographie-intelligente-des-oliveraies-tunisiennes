@@ -1,0 +1,193 @@
+
+$ C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\.venv\Scripts\python.exe scripts/export_demo_submissions_geojson.py --job-id demo_1777744345_940869 --output demo_app\submissions\demo_1777744345_940869.geojson
+{
+  "output": "demo_app\\submissions\\demo_1777744345_940869.geojson",
+  "count": 1
+}
+Exit code: 0
+
+$ C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\.venv\Scripts\python.exe scripts/download_sentinel2_openeo.py --input-geojson demo_app\submissions\demo_1777744345_940869.geojson --manifest openeo_jobs_manifest_demo_1777744345_940869.json --start-jobs --auth-method device --auth-timeout 1800 --no-browser
+Authenticated using refresh token.
+{"split": "demo", "id": "demo_1777744345_940869", "cultivation_system": "unknown", "governorate": null, "zone_id": null, "job_id": "cdse-j-2605021752334a3aa0e3aaf8f441d8ff", "title": "demo__unknown__demo_1777744345_940869__2025__05_06__s2_l2a", "started": true, "start_error": null}
+Wrote openeo_jobs_manifest_demo_1777744345_940869.json with 1 jobs.
+Exit code: 0
+
+Download attempt 1/20
+
+$ C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\.venv\Scripts\python.exe scripts/download_openeo_results.py --manifest openeo_jobs_manifest_demo_1777744345_940869.json --output sentinel2_l2a/2025_05_06 --auth-method device --auth-timeout 1800 --no-browser
+Authenticated using refresh token.
+cdse-j-2605021752334a3aa0e3aaf8f441d8ff created demo__unknown__demo_1777744345_940869__2025__05_06__s2_l2a
+Exit code: 0
+If the job is not finished yet, the downloader skips it. Next check in 120 seconds.
+
+Download attempt 2/20
+
+$ C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\.venv\Scripts\python.exe scripts/download_openeo_results.py --manifest openeo_jobs_manifest_demo_1777744345_940869.json --output sentinel2_l2a/2025_05_06 --auth-method device --auth-timeout 1800 --no-browser
+Authenticated using refresh token.
+cdse-j-2605021752334a3aa0e3aaf8f441d8ff running demo__unknown__demo_1777744345_940869__2025__05_06__s2_l2a
+Exit code: 0
+If the job is not finished yet, the downloader skips it. Next check in 120 seconds.
+
+Download attempt 3/20
+
+$ C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\.venv\Scripts\python.exe scripts/download_openeo_results.py --manifest openeo_jobs_manifest_demo_1777744345_940869.json --output sentinel2_l2a/2025_05_06 --auth-method device --auth-timeout 1800 --no-browser
+Authenticated using refresh token.
+cdse-j-2605021752334a3aa0e3aaf8f441d8ff finished demo__unknown__demo_1777744345_940869__2025__05_06__s2_l2a
+Downloaded: sentinel2_l2a\2025_05_06\demo\unknown__demo_1777744345_940869.tif
+Exit code: 0
+If the job is not finished yet, the downloader skips it. Next check in 120 seconds.
+
+Download attempt 4/20
+
+$ C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\.venv\Scripts\python.exe scripts/download_openeo_results.py --manifest openeo_jobs_manifest_demo_1777744345_940869.json --output sentinel2_l2a/2025_05_06 --auth-method device --auth-timeout 1800 --no-browser
+Authenticated using refresh token.
+cdse-j-2605021752334a3aa0e3aaf8f441d8ff finished demo__unknown__demo_1777744345_940869__2025__05_06__s2_l2a
+Already exists: sentinel2_l2a\2025_05_06\demo\unknown__demo_1777744345_940869.tif
+Exit code: 0
+If the job is not finished yet, the downloader skips it. Next check in 120 seconds.
+
+Download attempt 5/20
+
+$ C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\.venv\Scripts\python.exe scripts/download_openeo_results.py --manifest openeo_jobs_manifest_demo_1777744345_940869.json --output sentinel2_l2a/2025_05_06 --auth-method device --auth-timeout 1800 --no-browser
+Authenticated using refresh token.
+cdse-j-2605021752334a3aa0e3aaf8f441d8ff finished demo__unknown__demo_1777744345_940869__2025__05_06__s2_l2a
+Already exists: sentinel2_l2a\2025_05_06\demo\unknown__demo_1777744345_940869.tif
+Exit code: 0
+If the job is not finished yet, the downloader skips it. Next check in 120 seconds.
+
+Download attempt 6/20
+
+$ C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\.venv\Scripts\python.exe scripts/download_openeo_results.py --manifest openeo_jobs_manifest_demo_1777744345_940869.json --output sentinel2_l2a/2025_05_06 --auth-method device --auth-timeout 1800 --no-browser
+Authenticated using refresh token.
+cdse-j-2605021752334a3aa0e3aaf8f441d8ff finished demo__unknown__demo_1777744345_940869__2025__05_06__s2_l2a
+Already exists: sentinel2_l2a\2025_05_06\demo\unknown__demo_1777744345_940869.tif
+Exit code: 0
+If the job is not finished yet, the downloader skips it. Next check in 120 seconds.
+
+Download attempt 7/20
+
+$ C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\.venv\Scripts\python.exe scripts/download_openeo_results.py --manifest openeo_jobs_manifest_demo_1777744345_940869.json --output sentinel2_l2a/2025_05_06 --auth-method device --auth-timeout 1800 --no-browser
+Authenticated using refresh token.
+cdse-j-2605021752334a3aa0e3aaf8f441d8ff finished demo__unknown__demo_1777744345_940869__2025__05_06__s2_l2a
+Already exists: sentinel2_l2a\2025_05_06\demo\unknown__demo_1777744345_940869.tif
+Exit code: 0
+If the job is not finished yet, the downloader skips it. Next check in 120 seconds.
+
+Download attempt 8/20
+
+$ C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\.venv\Scripts\python.exe scripts/download_openeo_results.py --manifest openeo_jobs_manifest_demo_1777744345_940869.json --output sentinel2_l2a/2025_05_06 --auth-method device --auth-timeout 1800 --no-browser
+Authenticated using refresh token.
+cdse-j-2605021752334a3aa0e3aaf8f441d8ff finished demo__unknown__demo_1777744345_940869__2025__05_06__s2_l2a
+Already exists: sentinel2_l2a\2025_05_06\demo\unknown__demo_1777744345_940869.tif
+Exit code: 0
+If the job is not finished yet, the downloader skips it. Next check in 120 seconds.
+
+Download attempt 9/20
+
+$ C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\.venv\Scripts\python.exe scripts/download_openeo_results.py --manifest openeo_jobs_manifest_demo_1777744345_940869.json --output sentinel2_l2a/2025_05_06 --auth-method device --auth-timeout 1800 --no-browser
+Authenticated using refresh token.
+cdse-j-2605021752334a3aa0e3aaf8f441d8ff finished demo__unknown__demo_1777744345_940869__2025__05_06__s2_l2a
+Already exists: sentinel2_l2a\2025_05_06\demo\unknown__demo_1777744345_940869.tif
+Exit code: 0
+If the job is not finished yet, the downloader skips it. Next check in 120 seconds.
+
+Download attempt 10/20
+
+$ C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\.venv\Scripts\python.exe scripts/download_openeo_results.py --manifest openeo_jobs_manifest_demo_1777744345_940869.json --output sentinel2_l2a/2025_05_06 --auth-method device --auth-timeout 1800 --no-browser
+Authenticated using refresh token.
+cdse-j-2605021752334a3aa0e3aaf8f441d8ff finished demo__unknown__demo_1777744345_940869__2025__05_06__s2_l2a
+Already exists: sentinel2_l2a\2025_05_06\demo\unknown__demo_1777744345_940869.tif
+Exit code: 0
+If the job is not finished yet, the downloader skips it. Next check in 120 seconds.
+
+Download attempt 11/20
+
+$ C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\.venv\Scripts\python.exe scripts/download_openeo_results.py --manifest openeo_jobs_manifest_demo_1777744345_940869.json --output sentinel2_l2a/2025_05_06 --auth-method device --auth-timeout 1800 --no-browser
+Authenticated using refresh token.
+cdse-j-2605021752334a3aa0e3aaf8f441d8ff finished demo__unknown__demo_1777744345_940869__2025__05_06__s2_l2a
+Already exists: sentinel2_l2a\2025_05_06\demo\unknown__demo_1777744345_940869.tif
+Exit code: 0
+If the job is not finished yet, the downloader skips it. Next check in 120 seconds.
+
+Download attempt 12/20
+
+$ C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\.venv\Scripts\python.exe scripts/download_openeo_results.py --manifest openeo_jobs_manifest_demo_1777744345_940869.json --output sentinel2_l2a/2025_05_06 --auth-method device --auth-timeout 1800 --no-browser
+Authenticated using refresh token.
+cdse-j-2605021752334a3aa0e3aaf8f441d8ff finished demo__unknown__demo_1777744345_940869__2025__05_06__s2_l2a
+Already exists: sentinel2_l2a\2025_05_06\demo\unknown__demo_1777744345_940869.tif
+Exit code: 0
+If the job is not finished yet, the downloader skips it. Next check in 120 seconds.
+
+Download attempt 13/20
+
+$ C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\.venv\Scripts\python.exe scripts/download_openeo_results.py --manifest openeo_jobs_manifest_demo_1777744345_940869.json --output sentinel2_l2a/2025_05_06 --auth-method device --auth-timeout 1800 --no-browser
+Authenticated using refresh token.
+cdse-j-2605021752334a3aa0e3aaf8f441d8ff finished demo__unknown__demo_1777744345_940869__2025__05_06__s2_l2a
+Already exists: sentinel2_l2a\2025_05_06\demo\unknown__demo_1777744345_940869.tif
+Exit code: 0
+If the job is not finished yet, the downloader skips it. Next check in 120 seconds.
+
+Download attempt 14/20
+
+$ C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\.venv\Scripts\python.exe scripts/download_openeo_results.py --manifest openeo_jobs_manifest_demo_1777744345_940869.json --output sentinel2_l2a/2025_05_06 --auth-method device --auth-timeout 1800 --no-browser
+Authenticated using refresh token.
+cdse-j-2605021752334a3aa0e3aaf8f441d8ff finished demo__unknown__demo_1777744345_940869__2025__05_06__s2_l2a
+Already exists: sentinel2_l2a\2025_05_06\demo\unknown__demo_1777744345_940869.tif
+Exit code: 0
+If the job is not finished yet, the downloader skips it. Next check in 120 seconds.
+
+Download attempt 15/20
+
+$ C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\.venv\Scripts\python.exe scripts/download_openeo_results.py --manifest openeo_jobs_manifest_demo_1777744345_940869.json --output sentinel2_l2a/2025_05_06 --auth-method device --auth-timeout 1800 --no-browser
+Authenticated using refresh token.
+cdse-j-2605021752334a3aa0e3aaf8f441d8ff finished demo__unknown__demo_1777744345_940869__2025__05_06__s2_l2a
+Already exists: sentinel2_l2a\2025_05_06\demo\unknown__demo_1777744345_940869.tif
+Exit code: 0
+If the job is not finished yet, the downloader skips it. Next check in 120 seconds.
+
+Download attempt 16/20
+
+$ C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\.venv\Scripts\python.exe scripts/download_openeo_results.py --manifest openeo_jobs_manifest_demo_1777744345_940869.json --output sentinel2_l2a/2025_05_06 --auth-method device --auth-timeout 1800 --no-browser
+Authenticated using refresh token.
+cdse-j-2605021752334a3aa0e3aaf8f441d8ff finished demo__unknown__demo_1777744345_940869__2025__05_06__s2_l2a
+Already exists: sentinel2_l2a\2025_05_06\demo\unknown__demo_1777744345_940869.tif
+Exit code: 0
+If the job is not finished yet, the downloader skips it. Next check in 120 seconds.
+
+Download attempt 17/20
+
+$ C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\.venv\Scripts\python.exe scripts/download_openeo_results.py --manifest openeo_jobs_manifest_demo_1777744345_940869.json --output sentinel2_l2a/2025_05_06 --auth-method device --auth-timeout 1800 --no-browser
+Authenticated using refresh token.
+cdse-j-2605021752334a3aa0e3aaf8f441d8ff finished demo__unknown__demo_1777744345_940869__2025__05_06__s2_l2a
+Already exists: sentinel2_l2a\2025_05_06\demo\unknown__demo_1777744345_940869.tif
+Exit code: 0
+If the job is not finished yet, the downloader skips it. Next check in 120 seconds.
+
+Download attempt 18/20
+
+$ C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\.venv\Scripts\python.exe scripts/download_openeo_results.py --manifest openeo_jobs_manifest_demo_1777744345_940869.json --output sentinel2_l2a/2025_05_06 --auth-method device --auth-timeout 1800 --no-browser
+Authenticated using refresh token.
+cdse-j-2605021752334a3aa0e3aaf8f441d8ff finished demo__unknown__demo_1777744345_940869__2025__05_06__s2_l2a
+Already exists: sentinel2_l2a\2025_05_06\demo\unknown__demo_1777744345_940869.tif
+Exit code: 0
+If the job is not finished yet, the downloader skips it. Next check in 120 seconds.
+
+Download attempt 19/20
+
+$ C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\.venv\Scripts\python.exe scripts/download_openeo_results.py --manifest openeo_jobs_manifest_demo_1777744345_940869.json --output sentinel2_l2a/2025_05_06 --auth-method device --auth-timeout 1800 --no-browser
+Authenticated using refresh token.
+cdse-j-2605021752334a3aa0e3aaf8f441d8ff finished demo__unknown__demo_1777744345_940869__2025__05_06__s2_l2a
+Already exists: sentinel2_l2a\2025_05_06\demo\unknown__demo_1777744345_940869.tif
+Exit code: 0
+If the job is not finished yet, the downloader skips it. Next check in 120 seconds.
+
+Download attempt 20/20
+
+$ C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\.venv\Scripts\python.exe scripts/download_openeo_results.py --manifest openeo_jobs_manifest_demo_1777744345_940869.json --output sentinel2_l2a/2025_05_06 --auth-method device --auth-timeout 1800 --no-browser
+Authenticated using refresh token.
+cdse-j-2605021752334a3aa0e3aaf8f441d8ff finished demo__unknown__demo_1777744345_940869__2025__05_06__s2_l2a
+Already exists: sentinel2_l2a\2025_05_06\demo\unknown__demo_1777744345_940869.tif
+Exit code: 0
+If the job is not finished yet, the downloader skips it. Next check in 120 seconds.
+
+Workflow finished polling. Relance Analyse automatique dans la demo.

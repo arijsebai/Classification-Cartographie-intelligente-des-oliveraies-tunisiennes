@@ -16,7 +16,7 @@
           <span class="mark"></span>
           <div>
             <h1>EZZAYRA Olive Map</h1>
-            <p>Démo dessin et qualification parcellaire</p>
+            <p>Demo dessin et qualification parcellaire</p>
           </div>
         </div>
 
@@ -27,16 +27,29 @@
           </div>
           <div>
             <span class="label">Limite</span>
-            <strong id="limitValue">100 km²</strong>
+            <strong id="limitValue">100 km2</strong>
           </div>
         </div>
 
         <div id="status" class="status neutral">Dessine un polygone sur la carte.</div>
+        <div id="modelStatus" class="status neutral">Modele offline non charge.</div>
+        <button id="classifyButton" class="action-button" type="button" disabled>Analyse automatique</button>
+        <button id="sentinelButton" class="action-button secondary" type="button" disabled>Soumettre extraction openEO</button>
+
+        <div id="openeoPanel" class="workflow hidden">
+          <span class="label">Workflow openEO</span>
+          <div id="openeoJob" class="workflow-job">Aucune demande.</div>
+          <div class="workflow-actions">
+            <button id="runOpenEOButton" class="mini-button" type="button">Lancer openEO en arriere-plan</button>
+          </div>
+          <pre id="openeoLog" class="workflow-log"></pre>
+        </div>
 
         <div class="legend">
-          <div><span class="swatch extensif"></span>Extensif</div>
-          <div><span class="swatch intensif"></span>Intensif</div>
-          <div><span class="swatch drawn"></span>Polygone dessiné</div>
+          <div><span class="swatch extensif"></span>Predit extensif</div>
+          <div><span class="swatch intensif"></span>Predit intensif</div>
+          <div><span class="swatch drawn"></span>Polygone dessine</div>
+          <div><span class="swatch sentinel"></span>Sentinel-2 local disponible</div>
         </div>
       </aside>
     </main>

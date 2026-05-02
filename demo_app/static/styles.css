@@ -124,6 +124,99 @@ strong {
   color: var(--bad);
 }
 
+.action-button {
+  width: 100%;
+  border: 0;
+  border-radius: 8px;
+  background: #17201b;
+  color: #ffffff;
+  padding: 12px 14px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.action-button:hover:not(:disabled) {
+  background: #26362d;
+}
+
+.action-button.secondary {
+  border: 1px solid var(--line);
+  background: #ffffff;
+  color: var(--ink);
+}
+
+.action-button.secondary:hover:not(:disabled) {
+  background: #f7faf8;
+}
+
+.action-button:disabled {
+  cursor: not-allowed;
+  background: #b8c3bd;
+  color: #f7faf8;
+}
+
+.workflow {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  display: grid;
+  gap: 10px;
+}
+
+.workflow-job {
+  color: var(--ink);
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.workflow-actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.mini-button {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--ink);
+  padding: 9px 10px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.mini-button:hover:not(:disabled) {
+  background: #f7faf8;
+}
+
+.mini-button:disabled {
+  cursor: wait;
+  color: var(--muted);
+  background: #f7faf8;
+}
+
+.workflow-log {
+  min-height: 88px;
+  max-height: 190px;
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #0f1713;
+  color: #d8f3df;
+  padding: 10px;
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.hidden {
+  display: none;
+}
+
 .legend {
   margin-top: auto;
   display: grid;
@@ -151,6 +244,11 @@ strong {
 
 .swatch.drawn {
   background: #f97316;
+}
+
+.swatch.sentinel {
+  border: 1px dashed #2563eb;
+  background: rgba(37, 99, 235, 0.16);
 }
 
 .leaflet-container {

@@ -1,0 +1,668 @@
+{
+  "split": "test",
+  "checkpoint": "models/unet_resnet_sentinel2/best.pt",
+  "requested_threshold": 0.5,
+  "best_threshold": 0.1,
+  "best_dice": 0.0,
+  "best_iou": 0.0,
+  "count": 7,
+  "thresholds": [
+    {
+      "threshold": 0.1,
+      "dice": 0.0,
+      "iou": 0.0,
+      "target_pixels": 0.0,
+      "pred_pixels": 33688.857142857145,
+      "count": 7,
+      "items": [
+        {
+          "id": "parcel_1777666069829_t5ehp",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666069829_t5ehp.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 31286.0
+        },
+        {
+          "id": "parcel_1777666572107_7pdad",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666572107_7pdad.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 50131.0
+        },
+        {
+          "id": "parcel_1777666591451_o64cz",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666591451_o64cz.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 33543.0
+        },
+        {
+          "id": "parcel_1777666608727_pm8wx",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666608727_pm8wx.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 45717.0
+        },
+        {
+          "id": "parcel_1777662875975_5jz1b",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\intensif__parcel_1777662875975_5jz1b.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 26438.0
+        },
+        {
+          "id": "parcel_1777662889381_5q9ie",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\intensif__parcel_1777662889381_5q9ie.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 18447.0
+        },
+        {
+          "id": "parcel_1777666827849_immef",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\intensif__parcel_1777666827849_immef.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 30260.0
+        }
+      ]
+    },
+    {
+      "threshold": 0.2,
+      "dice": 0.0,
+      "iou": 0.0,
+      "target_pixels": 0.0,
+      "pred_pixels": 33188.0,
+      "count": 7,
+      "items": [
+        {
+          "id": "parcel_1777666069829_t5ehp",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666069829_t5ehp.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 30881.0
+        },
+        {
+          "id": "parcel_1777666572107_7pdad",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666572107_7pdad.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 50131.0
+        },
+        {
+          "id": "parcel_1777666591451_o64cz",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666591451_o64cz.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 33543.0
+        },
+        {
+          "id": "parcel_1777666608727_pm8wx",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666608727_pm8wx.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 43950.0
+        },
+        {
+          "id": "parcel_1777662875975_5jz1b",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\intensif__parcel_1777662875975_5jz1b.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 26230.0
+        },
+        {
+          "id": "parcel_1777662889381_5q9ie",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\intensif__parcel_1777662889381_5q9ie.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 18244.0
+        },
+        {
+          "id": "parcel_1777666827849_immef",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\intensif__parcel_1777666827849_immef.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 29337.0
+        }
+      ]
+    },
+    {
+      "threshold": 0.3,
+      "dice": 0.0,
+      "iou": 0.0,
+      "target_pixels": 0.0,
+      "pred_pixels": 29008.0,
+      "count": 7,
+      "items": [
+        {
+          "id": "parcel_1777666069829_t5ehp",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666069829_t5ehp.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 21003.0
+        },
+        {
+          "id": "parcel_1777666572107_7pdad",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666572107_7pdad.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 49866.0
+        },
+        {
+          "id": "parcel_1777666591451_o64cz",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666591451_o64cz.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 33134.0
+        },
+        {
+          "id": "parcel_1777666608727_pm8wx",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666608727_pm8wx.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 36351.0
+        },
+        {
+          "id": "parcel_1777662875975_5jz1b",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\intensif__parcel_1777662875975_5jz1b.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 24400.0
+        },
+        {
+          "id": "parcel_1777662889381_5q9ie",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\intensif__parcel_1777662889381_5q9ie.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 12837.0
+        },
+        {
+          "id": "parcel_1777666827849_immef",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\intensif__parcel_1777666827849_immef.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 25465.0
+        }
+      ]
+    },
+    {
+      "threshold": 0.4,
+      "dice": 0.0,
+      "iou": 0.0,
+      "target_pixels": 0.0,
+      "pred_pixels": 17225.14285714286,
+      "count": 7,
+      "items": [
+        {
+          "id": "parcel_1777666069829_t5ehp",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666069829_t5ehp.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 8245.0
+        },
+        {
+          "id": "parcel_1777666572107_7pdad",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666572107_7pdad.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 31646.0
+        },
+        {
+          "id": "parcel_1777666591451_o64cz",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666591451_o64cz.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 22293.0
+        },
+        {
+          "id": "parcel_1777666608727_pm8wx",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666608727_pm8wx.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 20748.0
+        },
+        {
+          "id": "parcel_1777662875975_5jz1b",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\intensif__parcel_1777662875975_5jz1b.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 19847.0
+        },
+        {
+          "id": "parcel_1777662889381_5q9ie",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\intensif__parcel_1777662889381_5q9ie.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 1893.0
+        },
+        {
+          "id": "parcel_1777666827849_immef",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\intensif__parcel_1777666827849_immef.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 15904.0
+        }
+      ]
+    },
+    {
+      "threshold": 0.5,
+      "dice": 0.0,
+      "iou": 0.0,
+      "target_pixels": 0.0,
+      "pred_pixels": 1146.7142857142858,
+      "count": 7,
+      "items": [
+        {
+          "id": "parcel_1777666069829_t5ehp",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666069829_t5ehp.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 814.0
+        },
+        {
+          "id": "parcel_1777666572107_7pdad",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666572107_7pdad.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 1876.0
+        },
+        {
+          "id": "parcel_1777666591451_o64cz",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666591451_o64cz.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 1277.0
+        },
+        {
+          "id": "parcel_1777666608727_pm8wx",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666608727_pm8wx.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 1689.0
+        },
+        {
+          "id": "parcel_1777662875975_5jz1b",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\intensif__parcel_1777662875975_5jz1b.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 1353.0
+        },
+        {
+          "id": "parcel_1777662889381_5q9ie",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\intensif__parcel_1777662889381_5q9ie.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 93.0
+        },
+        {
+          "id": "parcel_1777666827849_immef",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\intensif__parcel_1777666827849_immef.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 925.0
+        }
+      ]
+    },
+    {
+      "threshold": 0.6,
+      "dice": 0.0,
+      "iou": 0.0,
+      "target_pixels": 0.0,
+      "pred_pixels": 9.571428571428571,
+      "count": 7,
+      "items": [
+        {
+          "id": "parcel_1777666069829_t5ehp",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666069829_t5ehp.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 10.0
+        },
+        {
+          "id": "parcel_1777666572107_7pdad",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666572107_7pdad.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 14.0
+        },
+        {
+          "id": "parcel_1777666591451_o64cz",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666591451_o64cz.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 25.0
+        },
+        {
+          "id": "parcel_1777666608727_pm8wx",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666608727_pm8wx.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 11.0
+        },
+        {
+          "id": "parcel_1777662875975_5jz1b",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\intensif__parcel_1777662875975_5jz1b.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 0.0
+        },
+        {
+          "id": "parcel_1777662889381_5q9ie",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\intensif__parcel_1777662889381_5q9ie.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 0.0
+        },
+        {
+          "id": "parcel_1777666827849_immef",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\intensif__parcel_1777666827849_immef.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 7.0
+        }
+      ]
+    },
+    {
+      "threshold": 0.7,
+      "dice": 0.0,
+      "iou": 0.0,
+      "target_pixels": 0.0,
+      "pred_pixels": 0.0,
+      "count": 7,
+      "items": [
+        {
+          "id": "parcel_1777666069829_t5ehp",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666069829_t5ehp.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 0.0
+        },
+        {
+          "id": "parcel_1777666572107_7pdad",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666572107_7pdad.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 0.0
+        },
+        {
+          "id": "parcel_1777666591451_o64cz",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666591451_o64cz.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 0.0
+        },
+        {
+          "id": "parcel_1777666608727_pm8wx",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666608727_pm8wx.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 0.0
+        },
+        {
+          "id": "parcel_1777662875975_5jz1b",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\intensif__parcel_1777662875975_5jz1b.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 0.0
+        },
+        {
+          "id": "parcel_1777662889381_5q9ie",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\intensif__parcel_1777662889381_5q9ie.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 0.0
+        },
+        {
+          "id": "parcel_1777666827849_immef",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\intensif__parcel_1777666827849_immef.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 0.0
+        }
+      ]
+    },
+    {
+      "threshold": 0.8,
+      "dice": 0.0,
+      "iou": 0.0,
+      "target_pixels": 0.0,
+      "pred_pixels": 0.0,
+      "count": 7,
+      "items": [
+        {
+          "id": "parcel_1777666069829_t5ehp",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666069829_t5ehp.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 0.0
+        },
+        {
+          "id": "parcel_1777666572107_7pdad",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666572107_7pdad.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 0.0
+        },
+        {
+          "id": "parcel_1777666591451_o64cz",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666591451_o64cz.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 0.0
+        },
+        {
+          "id": "parcel_1777666608727_pm8wx",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666608727_pm8wx.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 0.0
+        },
+        {
+          "id": "parcel_1777662875975_5jz1b",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\intensif__parcel_1777662875975_5jz1b.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 0.0
+        },
+        {
+          "id": "parcel_1777662889381_5q9ie",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\intensif__parcel_1777662889381_5q9ie.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 0.0
+        },
+        {
+          "id": "parcel_1777666827849_immef",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\intensif__parcel_1777666827849_immef.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 0.0
+        }
+      ]
+    },
+    {
+      "threshold": 0.9,
+      "dice": 0.0,
+      "iou": 0.0,
+      "target_pixels": 0.0,
+      "pred_pixels": 0.0,
+      "count": 7,
+      "items": [
+        {
+          "id": "parcel_1777666069829_t5ehp",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666069829_t5ehp.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 0.0
+        },
+        {
+          "id": "parcel_1777666572107_7pdad",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666572107_7pdad.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 0.0
+        },
+        {
+          "id": "parcel_1777666591451_o64cz",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666591451_o64cz.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 0.0
+        },
+        {
+          "id": "parcel_1777666608727_pm8wx",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\extensif__parcel_1777666608727_pm8wx.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 0.0
+        },
+        {
+          "id": "parcel_1777662875975_5jz1b",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\intensif__parcel_1777662875975_5jz1b.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 0.0
+        },
+        {
+          "id": "parcel_1777662889381_5q9ie",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\intensif__parcel_1777662889381_5q9ie.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 0.0
+        },
+        {
+          "id": "parcel_1777666827849_immef",
+          "source_path": "sentinel2_l2a\\2025_05_06\\test\\intensif__parcel_1777666827849_immef.tif",
+          "prediction_path": null,
+          "dice": 0.0,
+          "iou": 0.0,
+          "target_pixels": 0.0,
+          "pred_pixels": 0.0
+        }
+      ]
+    }
+  ]
+}

@@ -68,6 +68,54 @@ Pour creer et demarrer les jobs pour toutes les parcelles :
 python scripts\download_sentinel2_openeo.py --start-jobs
 ```
 
+Pour l'entrainement segmentation U-Net, il faut des pixels de fond autour de la parcelle. Utiliser donc des exports bbox avec buffer :
+
+```powershell
+python scripts\download_sentinel2_openeo.py --start-jobs --export-region bbox --buffer-deg 0.01
+```
+
+Pour tester l'elargissement sans lancer 49 jobs, commencer par le split test uniquement :
+
+```powershell
+python scripts\download_sentinel2_openeo.py --splits test --start-jobs --export-region bbox --buffer-deg 0.01 --auth-method device --auth-timeout 1800 --no-browser --max-started-jobs 7
+```
+
+Cela ecrit :
+
+```text
+openeo_jobs_manifest_bbox_test.json
+```
+
+Cela ecrit un manifeste separe :
+
+```text
+openeo_jobs_manifest_bbox.json
+```
+
+Copernicus limite souvent les jobs concurrents a 30. Si certains jobs restent crees mais non demarres, attendre que les premiers finissent puis lancer :
+
+```powershell
+python scripts\start_pending_openeo_jobs.py --manifest openeo_jobs_manifest_bbox.json --auth-timeout 1800 --no-browser --max-start 30
+```
+
+Si la limite reste bloquee alors que les anciens jobs sont `finished`, telecharger les resultats puis supprimer les anciens jobs du backend :
+
+```powershell
+python scripts\download_openeo_results.py --manifest openeo_jobs_manifest.json --output sentinel2_l2a/2025_05_06 --auth-method device --auth-timeout 1800 --no-browser
+python scripts\delete_openeo_jobs.py --manifest openeo_jobs_manifest.json --auth-timeout 1800 --no-browser
+python scripts\delete_openeo_jobs.py --manifest openeo_jobs_manifest.json --auth-timeout 1800 --no-browser --yes
+```
+
+La deuxieme commande sans `--yes` est un apercu. La troisieme supprime reellement les jobs distants termines.
+
+Ces nouveaux GeoTIFF doivent ensuite etre utilises avec `--mask-mode rasterize` cote entrainement/evaluation.
+
+Telecharger les resultats bbox dans un dossier separe :
+
+```powershell
+python scripts\download_openeo_results.py --manifest openeo_jobs_manifest_bbox.json --output sentinel2_l2a/2025_05_06_bboxbuf001 --auth-method device --auth-timeout 1800 --no-browser
+```
+
 Parametres par defaut :
 
 ```text

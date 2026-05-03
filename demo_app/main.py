@@ -867,9 +867,15 @@ def fast_analyze(payload: PolygonRequest) -> dict[str, Any]:
     return {"found": True, "classification": prediction}
 
 
+class CacheItemRequest(BaseModel):
+    """Request to cache a classification result with full details."""
+    geometry: dict[str, Any] = Field(..., description="GeoJSON Polygon geometry")
+    classification: dict[str, Any] = Field(..., description="Classification result with all fields")
+
+
 @app.post("/api/cache-add")
 def cache_add(payload: PolygonRequest) -> dict[str, Any]:
-    """Register a newly classified polygon in the session cache."""
+    """Register a newly classified polygon in the session cache (deprecated, use /api/cache-add-result)."""
     geometry = payload.geometry
     area_m2 = polygon_area_m2(geometry)
     area_ha = area_m2 / 10_000.0
@@ -877,10 +883,10 @@ def cache_add(payload: PolygonRequest) -> dict[str, Any]:
     # Generate a unique ID for this cached polygon
     cache_id = f"cached_{int(time.time() * 1000)}"
     
-    # Quick classification via demo rules
+    # Full classification including method, confidence, and metadata
     cls = demo_classify(geometry, area_ha)
     
-    # Store in session cache
+    # Store in session cache with all classification details for traceability
     cached_item = {
         "id": cache_id,
         "geometry": geometry,
@@ -891,8 +897,12 @@ def cache_add(payload: PolygonRequest) -> dict[str, Any]:
             "model_prediction": cls.get("label"),
             "prob_intensif": cls.get("prob_intensif"),
             "area_ha": area_ha,
-            "model_source": "session_cache_new",
+            "model_source": cls.get("method", "session_cache_new"),
             "confidence": cls.get("confidence"),
+            "method": cls.get("method"),
+            "matched_parcel_id": cls.get("matched_parcel_id"),
+            "ground_truth": cls.get("ground_truth"),
+            "note": cls.get("note"),
             "cached_at": time.time(),
         },
         "type": "Feature",
@@ -904,6 +914,51 @@ def cache_add(payload: PolygonRequest) -> dict[str, Any]:
         "cache_id": cache_id,
         "area_ha": round(area_ha, 2),
         "classification": cls,
+    }
+
+
+@app.post("/api/cache-add-result")
+def cache_add_result(payload: CacheItemRequest) -> dict[str, Any]:
+    """Register a classification result (with actual analysis outcome) in the session cache."""
+    geometry = payload.geometry
+    classification = payload.classification
+    
+    area_m2 = polygon_area_m2(geometry)
+    area_ha = area_m2 / 10_000.0
+    
+    # Generate a unique ID for this cached polygon
+    cache_id = f"cached_{int(time.time() * 1000)}"
+    
+    # Store in session cache with the provided classification (which is the real result)
+    cached_item = {
+        "id": cache_id,
+        "geometry": geometry,
+        "properties": {
+            "id": cache_id,
+            "name": f"Zone calculée {len(session_cache) + 1}",
+            "cultivation_system": classification.get("label"),
+            "model_prediction": classification.get("label"),
+            "prob_intensif": classification.get("prob_intensif"),
+            "area_ha": area_ha,
+            "model_source": classification.get("method", "unknown"),
+            "confidence": classification.get("confidence"),
+            "method": classification.get("method"),
+            "matched_parcel_id": classification.get("matched_parcel_id"),
+            "ground_truth": classification.get("ground_truth"),
+            "note": classification.get("note"),
+            "image_path": classification.get("image_path"),
+            "valid_pixel_count": classification.get("valid_pixel_count"),
+            "cached_at": time.time(),
+        },
+        "type": "Feature",
+    }
+    session_cache.append(cached_item)
+    
+    return {
+        "cached": True,
+        "cache_id": cache_id,
+        "area_ha": round(area_ha, 2),
+        "classification": classification,
     }
 
 

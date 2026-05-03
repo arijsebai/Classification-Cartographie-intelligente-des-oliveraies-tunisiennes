@@ -4,6 +4,7 @@ let currentGeometry = null;
 let currentOpenEOJobId = null;
 let openEOPollTimer = null;
 let autoAnalysisRunning = false;
+let cacheLayer = null;  // Persistent layer for session cache
 
 const areaValue = document.getElementById("areaValue");
 const limitValue = document.getElementById("limitValue");
@@ -277,26 +278,59 @@ async function loadSentinelFootprints() {
 async function loadSessionCache() {
   try {
     const response = await fetch("/api/cache-list");
-  invalidateMapSize();
     if (!response.ok) return;
     
     const cacheData = await response.json();
+    
+    // Remove old cache layer if it exists
+    if (cacheLayer) {
+      map.removeLayer(cacheLayer);
+      cacheLayer = null;
+    }
+    
+    // Only add new layer if there are features
     if (!cacheData.features || cacheData.features.length === 0) return;
     
-    L.geoJSON(cacheData, {
+    cacheLayer = L.geoJSON(cacheData, {
       style: styleNewlyCachedPolygon,
       onEachFeature: (feature, layer) => {
         const props = feature.properties || {};
-        const popup = `
+        const methodLabel = {
+          "offline_random_forest_matched_existing_parcel": "✓ Parcelle existante",
+          "demo_rule_geometry_precheck": "📐 Règles de démo",
+          "local_sentinel2_random_forest": "🛰️ Sentinel-2 local",
+          "session_cache_new": "✓ Nouvellement calculé"
+        }[props.method] || "✓ Calculé";
+        
+        let popup = `
           <strong>${props.name || props.id}</strong><br>
-          <span style="background:#fbbf24;color:white;padding:2px 6px;border-radius:3px;font-size:11px;font-weight:bold;">✓ Nouvellement calculé</span><br>
+          <span style="background:#fbbf24;color:white;padding:2px 6px;border-radius:3px;font-size:11px;font-weight:bold;">${methodLabel}</span><br>
           Prédiction: <strong>${props.model_prediction || "—"}</strong><br>
-          Confiance: ${Math.round((props.confidence || 0) * 100)}%<br>
-          ${props.area_ha ? `${props.area_ha.toFixed(1)} ha` : ""}
-        `;
+          Confiance: ${Math.round((props.confidence || 0) * 100)}%<br>`;
+        
+        if (props.prob_intensif !== undefined && props.prob_intensif !== null) {
+          const prob_int = Math.round(props.prob_intensif * 100);
+          popup += `Prob. intensif: ${prob_int}%<br>`;
+        }
+        
+        if (props.area_ha) {
+          popup += `${props.area_ha.toFixed(1)} ha<br>`;
+        }
+        
+        if (props.matched_parcel_id) {
+          popup += `<small>Parcelle matchée: ${props.matched_parcel_id}</small><br>`;
+        }
+        
+        if (props.note) {
+          popup += `<small style="color:#666;">${props.note}</small>`;
+        }
+        
+        popup += "</div>";
         layer.bindPopup(popup);
       },
     }).addTo(map);
+    
+    invalidateMapSize();
   } catch (err) {
     console.warn('Error loading session cache:', err);
   }
@@ -407,20 +441,6 @@ async function analyzeLayer(layer) {
     "ok"
   );
 
-  // Add newly classified polygon to session cache
-  try {
-    const cacheResp = await fetch("/api/cache-add", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ geometry }),
-    });
-    if (cacheResp.ok) {
-      await loadSessionCache();  // reload to show newly cached polygon
-    }
-  } catch (e) {
-    console.warn('Error adding to cache:', e);
-  }
-
   await runAutomaticAnalysis();
 }
 
@@ -509,6 +529,23 @@ async function classifyWithLocalSentinel({ fallbackToQueue = false } = {}) {
       `${summary} Pixels valides: ${cls.valid_pixel_count}. Image: ${cls.image_path}.`,
       "ok"
     );
+
+    // Now add this REAL classification result to the cache
+    try {
+      const cacheResp = await fetch("/api/cache-add-result", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ 
+          geometry: currentGeometry,
+          classification: cls
+        }),
+      });
+      if (cacheResp.ok) {
+        await loadSessionCache();  // reload to show newly cached polygon with real results
+      }
+    } catch (e) {
+      console.warn('Error adding real classification to cache:', e);
+    }
   } catch (error) {
     console.error(error);
     setStatus("Impossible de classifier avec Sentinel-2 local.", "bad");

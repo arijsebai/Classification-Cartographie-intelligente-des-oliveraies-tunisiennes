@@ -1,0 +1,39 @@
+
+$ C:\Users\Arij\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe scripts/export_demo_submissions_geojson.py --job-id demo_1777796510_220494 --output demo_app\submissions\demo_1777796510_220494.geojson
+{
+  "output": "demo_app\\submissions\\demo_1777796510_220494.geojson",
+  "count": 1
+}
+Exit code: 0
+
+$ C:\Users\Arij\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe scripts/download_sentinel2_openeo.py --input-geojson demo_app\submissions\demo_1777796510_220494.geojson --manifest openeo_jobs_manifest_demo_1777796510_220494.json --start-jobs --auth-method device --auth-timeout 1800 --no-browser
+Authenticated using refresh token.
+{"split": "demo", "id": "demo_1777796510_220494", "cultivation_system": "unknown", "governorate": null, "zone_id": null, "job_id": "cdse-j-2605030821564f14855859a9946972bb", "title": "demo__unknown__demo_1777796510_220494__2025__05_06__s2_l2a", "started": true, "start_error": null}
+Wrote openeo_jobs_manifest_demo_1777796510_220494.json with 1 jobs.
+Exit code: 0
+
+Download attempt 1/20
+
+$ C:\Users\Arij\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe scripts/download_openeo_results.py --manifest openeo_jobs_manifest_demo_1777796510_220494.json --output sentinel2_l2a/2025_05_06 --auth-method device --auth-timeout 1800 --no-browser
+Authenticated using refresh token.
+cdse-j-2605030821564f14855859a9946972bb queued demo__unknown__demo_1777796510_220494__2025__05_06__s2_l2a
+Exit code: 0
+If the job is not finished yet, the downloader skips it. Next check in 120 seconds.
+
+Download attempt 2/20
+
+$ C:\Users\Arij\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe scripts/download_openeo_results.py --manifest openeo_jobs_manifest_demo_1777796510_220494.json --output sentinel2_l2a/2025_05_06 --auth-method device --auth-timeout 1800 --no-browser
+Authenticated using refresh token.
+cdse-j-2605030821564f14855859a9946972bb running demo__unknown__demo_1777796510_220494__2025__05_06__s2_l2a
+Exit code: 0
+If the job is not finished yet, the downloader skips it. Next check in 120 seconds.
+
+Download attempt 3/20
+
+$ C:\Users\Arij\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe scripts/download_openeo_results.py --manifest openeo_jobs_manifest_demo_1777796510_220494.json --output sentinel2_l2a/2025_05_06 --auth-method device --auth-timeout 1800 --no-browser
+Authenticated using refresh token.
+cdse-j-2605030821564f14855859a9946972bb finished demo__unknown__demo_1777796510_220494__2025__05_06__s2_l2a
+Downloaded: sentinel2_l2a\2025_05_06\demo\unknown__demo_1777796510_220494.tif
+Exit code: 0
+Classification completed: {"label": "intensif", "confidence": 0.816, "prob_intensif": 0.816, "threshold_intensif": 0.2, "method": "local_sentinel2_random_forest", "image_path": "sentinel2_l2a\\2025_05_06\\demo\\unknown__demo_1777796510_220494.tif", "valid_pixel_count": 273164, "valid_pixel_ratio": 0.498, "note": "Prediction uses Sentinel-2 pixels from a local GeoTIFF and the trained Random Forest."}
+Workflow finished successfully.

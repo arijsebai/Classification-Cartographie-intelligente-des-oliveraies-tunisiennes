@@ -1,0 +1,55 @@
+{
+  "job_id": "demo_1777795740_681951",
+  "status": "completed",
+  "created_at": "2026-05-03T08:09:00Z",
+  "area_km2": 55.199,
+  "area_ha": 5519.9,
+  "centroid": {
+    "lat": 35.815577,
+    "lng": 9.402903
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          9.340669,
+          35.842308
+        ],
+        [
+          9.47795,
+          35.842308
+        ],
+        [
+          9.39009,
+          35.762115
+        ],
+        [
+          9.340669,
+          35.842308
+        ]
+      ]
+    ]
+  },
+  "next_step": "Export this submission to GeoJSON, create/start openEO jobs, download GeoTIFFs, then rerun automatic analysis.",
+  "commands": [
+    "python scripts\\export_demo_submissions_geojson.py --job-id demo_1777795740_681951 --output demo_app\\submissions\\demo_1777795740_681951.geojson",
+    "python scripts\\download_sentinel2_openeo.py --input-geojson demo_app\\submissions\\demo_1777795740_681951.geojson --manifest openeo_jobs_manifest_demo_1777795740_681951.json --start-jobs --auth-method device --auth-timeout 1800 --no-browser",
+    "python scripts\\download_openeo_results.py --manifest openeo_jobs_manifest_demo_1777795740_681951.json --output sentinel2_l2a\\2025_05_06 --auth-method device --auth-timeout 1800 --no-browser"
+  ],
+  "analysis_status": "completed",
+  "analysis_completed_at": "2026-05-03T08:22:25Z",
+  "analysis_result": {
+    "label": "intensif",
+    "confidence": 0.888,
+    "prob_intensif": 0.888,
+    "threshold_intensif": 0.2,
+    "method": "local_sentinel2_random_forest",
+    "image_path": "sentinel2_l2a\\2025_05_06\\demo\\unknown__demo_1777795740_681951.tif",
+    "valid_pixel_count": 551458,
+    "valid_pixel_ratio": 0.497,
+    "note": "Prediction uses Sentinel-2 pixels from a local GeoTIFF and the trained Random Forest."
+  },
+  "result_source": "openEO_downloaded_geotiff_local_random_forest",
+  "result_file": "sentinel2_l2a\\2025_05_06\\demo\\unknown__demo_1777795740_681951.tif"
+}

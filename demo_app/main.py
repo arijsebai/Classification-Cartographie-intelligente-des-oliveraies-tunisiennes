@@ -36,7 +36,17 @@ try:
 except ImportError:
     joblib = None
 
-model = joblib.load(MODEL_PATH) if joblib is not None and MODEL_PATH.exists() else None
+# Load model safely at startup. If the artifact is missing or corrupted, log
+# the error and continue with `model = None` so the API can still start.
+model = None
+if joblib is not None and MODEL_PATH.exists():
+    try:
+        model = joblib.load(MODEL_PATH)
+    except Exception as error:  # pragma: no cover - runtime safety
+        import logging
+
+        logging.exception("Failed to load classification model '%s': %s", MODEL_PATH, error)
+        model = None
 openeo_processes: dict[str, subprocess.Popen] = {}
 session_cache: list[dict[str, Any]] = []  # In-memory cache for newly classified polygons
 

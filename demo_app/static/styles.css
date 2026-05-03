@@ -19,18 +19,21 @@ body {
   margin: 0;
   color: var(--ink);
   background: #eef3ef;
+  overflow: hidden;
 }
 
 .app-shell {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 360px;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
+  overflow: hidden;
 }
 
 #map {
   min-width: 0;
-  min-height: 100vh;
+  min-height: 0;
+  height: 100%;
 }
 
 .panel {
@@ -42,6 +45,7 @@ body {
   gap: 18px;
   box-shadow: -10px 0 28px rgba(18, 33, 25, 0.08);
   z-index: 500;
+  overflow: auto;
 }
 
 .brand {
@@ -259,10 +263,11 @@ strong {
   .app-shell {
     grid-template-columns: 1fr;
     grid-template-rows: minmax(0, 1fr) auto;
+    height: 100dvh;
   }
 
   #map {
-    min-height: 65vh;
+    min-height: 65dvh;
   }
 
   .panel {

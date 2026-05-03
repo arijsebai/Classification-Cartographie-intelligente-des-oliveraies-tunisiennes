@@ -1,0 +1,55 @@
+{
+  "job_id": "demo_1777796510_220494",
+  "status": "completed",
+  "created_at": "2026-05-03T08:21:50Z",
+  "area_km2": 27.334,
+  "area_ha": 2733.43,
+  "centroid": {
+    "lat": 35.661012,
+    "lng": 9.942427666666667
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          9.890261,
+          35.678494
+        ],
+        [
+          9.99734,
+          35.677379
+        ],
+        [
+          9.939682,
+          35.627163
+        ],
+        [
+          9.890261,
+          35.678494
+        ]
+      ]
+    ]
+  },
+  "next_step": "Export this submission to GeoJSON, create/start openEO jobs, download GeoTIFFs, then rerun automatic analysis.",
+  "commands": [
+    "python scripts\\export_demo_submissions_geojson.py --job-id demo_1777796510_220494 --output demo_app\\submissions\\demo_1777796510_220494.geojson",
+    "python scripts\\download_sentinel2_openeo.py --input-geojson demo_app\\submissions\\demo_1777796510_220494.geojson --manifest openeo_jobs_manifest_demo_1777796510_220494.json --start-jobs --auth-method device --auth-timeout 1800 --no-browser",
+    "python scripts\\download_openeo_results.py --manifest openeo_jobs_manifest_demo_1777796510_220494.json --output sentinel2_l2a\\2025_05_06 --auth-method device --auth-timeout 1800 --no-browser"
+  ],
+  "analysis_status": "completed",
+  "analysis_completed_at": "2026-05-03T08:26:31Z",
+  "analysis_result": {
+    "label": "intensif",
+    "confidence": 0.816,
+    "prob_intensif": 0.816,
+    "threshold_intensif": 0.2,
+    "method": "local_sentinel2_random_forest",
+    "image_path": "sentinel2_l2a\\2025_05_06\\demo\\unknown__demo_1777796510_220494.tif",
+    "valid_pixel_count": 273164,
+    "valid_pixel_ratio": 0.498,
+    "note": "Prediction uses Sentinel-2 pixels from a local GeoTIFF and the trained Random Forest."
+  },
+  "result_source": "openEO_downloaded_geotiff_local_random_forest",
+  "result_file": "sentinel2_l2a\\2025_05_06\\demo\\unknown__demo_1777796510_220494.tif"
+}

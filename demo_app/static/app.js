@@ -21,6 +21,19 @@ const map = L.map("map", {
   preferCanvas: true,
 });
 
+function invalidateMapSize() {
+  window.requestAnimationFrame(() => map.invalidateSize(false));
+}
+
+window.addEventListener("resize", invalidateMapSize);
+
+if (window.ResizeObserver) {
+  const resizeObserver = new ResizeObserver(() => invalidateMapSize());
+  resizeObserver.observe(document.querySelector(".app-shell"));
+  resizeObserver.observe(document.getElementById("map"));
+  resizeObserver.observe(document.querySelector(".panel"));
+}
+
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 19,
   attribution: "&copy; OpenStreetMap",
@@ -229,6 +242,7 @@ async function loadConfig() {
   maxPolygonKm2 = config.max_polygon_km2;
   limitValue.textContent = `${maxPolygonKm2} km2`;
   map.setView([config.default_center.lat, config.default_center.lng], config.default_zoom);
+  invalidateMapSize();
 }
 
 async function loadParcels() {
@@ -247,6 +261,7 @@ async function loadParcels() {
   if (geojson.features?.length) {
     map.fitBounds(layer.getBounds(), { padding: [24, 24] });
   }
+  invalidateMapSize();
 }
 
 async function loadSentinelFootprints() {
@@ -256,11 +271,13 @@ async function loadSentinelFootprints() {
     style: styleSentinelFootprint,
     interactive: false,
   }).addTo(map);
+  invalidateMapSize();
 }
 
 async function loadSessionCache() {
   try {
     const response = await fetch("/api/cache-list");
+  invalidateMapSize();
     if (!response.ok) return;
     
     const cacheData = await response.json();
@@ -543,6 +560,7 @@ loadConfig()
   .then(loadParcels)
   .then(loadSentinelFootprints)
   .then(loadSessionCache)
+  .then(() => invalidateMapSize())
   .catch((error) => {
     console.error(error);
     setStatus("Impossible de charger la demo.", "bad");

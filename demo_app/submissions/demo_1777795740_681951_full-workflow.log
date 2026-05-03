@@ -1,0 +1,239 @@
+
+$ C:\Users\Arij\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe scripts/export_demo_submissions_geojson.py --job-id demo_1777795740_681951 --output demo_app\submissions\demo_1777795740_681951.geojson
+{
+  "output": "demo_app\\submissions\\demo_1777795740_681951.geojson",
+  "count": 1
+}
+Exit code: 0
+
+$ C:\Users\Arij\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe scripts/download_sentinel2_openeo.py --input-geojson demo_app\submissions\demo_1777795740_681951.geojson --manifest openeo_jobs_manifest_demo_1777795740_681951.json --start-jobs --auth-method device --auth-timeout 1800 --no-browser
+Authenticated using refresh token.
+{"split": "demo", "id": "demo_1777795740_681951", "cultivation_system": "unknown", "governorate": null, "zone_id": null, "job_id": "cdse-j-2605030809114d05b44f23c37ac9b5b9", "title": "demo__unknown__demo_1777795740_681951__2025__05_06__s2_l2a", "started": true, "start_error": null}
+Wrote openeo_jobs_manifest_demo_1777795740_681951.json with 1 jobs.
+Exit code: 0
+
+Download attempt 1/20
+
+$ C:\Users\Arij\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe scripts/download_openeo_results.py --manifest openeo_jobs_manifest_demo_1777795740_681951.json --output sentinel2_l2a/2025_05_06 --auth-method device --auth-timeout 1800 --no-browser
+Authenticated using refresh token.
+cdse-j-2605030809114d05b44f23c37ac9b5b9 queued demo__unknown__demo_1777795740_681951__2025__05_06__s2_l2a
+Exit code: 0
+If the job is not finished yet, the downloader skips it. Next check in 120 seconds.
+
+Download attempt 2/20
+
+$ C:\Users\Arij\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe scripts/download_openeo_results.py --manifest openeo_jobs_manifest_demo_1777795740_681951.json --output sentinel2_l2a/2025_05_06 --auth-method device --auth-timeout 1800 --no-browser
+Authenticated using refresh token.
+cdse-j-2605030809114d05b44f23c37ac9b5b9 running demo__unknown__demo_1777795740_681951__2025__05_06__s2_l2a
+Exit code: 0
+If the job is not finished yet, the downloader skips it. Next check in 120 seconds.
+
+Download attempt 3/20
+
+$ C:\Users\Arij\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe scripts/download_openeo_results.py --manifest openeo_jobs_manifest_demo_1777795740_681951.json --output sentinel2_l2a/2025_05_06 --auth-method device --auth-timeout 1800 --no-browser
+Authenticated using refresh token.
+cdse-j-2605030809114d05b44f23c37ac9b5b9 finished demo__unknown__demo_1777795740_681951__2025__05_06__s2_l2a
+Downloaded: sentinel2_l2a\2025_05_06\demo\unknown__demo_1777795740_681951.tif
+Exit code: 0
+Classification pending or failed: ERROR:root:Failed to load classification model 'C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\models\cultivation_classifier\random_forest.joblib': 118
+Traceback (most recent call last):
+  File "C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\demo_app\main.py", line 44, in <module>
+    model = joblib.load(MODEL_PATH)
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Arij\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\joblib\numpy_pickle.py", line 749, in load
+    obj = _unpickle(
+          ^^^^^^^^^^
+  File "C:\Users\Arij\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\joblib\numpy_pickle.py", line 626, in _unpickle
+    obj = unpickler.load()
+          ^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\pickle.py", line 1213, in load
+    dispatch[key[0]](self)
+    ~~~~~~~~^^^^^^^^
+KeyError: 118
+Traceback (most recent call last):
+  File "rasterio/_base.pyx", line 311, in rasterio._base.DatasetBase.__init__
+  File "rasterio/_base.pyx", line 222, in rasterio._base.open_dataset
+  File "rasterio/_err.pyx", line 359, in rasterio._err.exc_wrap_pointer
+rasterio._err.CPLE_OpenFailedError: 'C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\sentinel2_l2a\2025_05_06\demo\unknown__demo_1777743661_244542.tif' not recognized as being in a supported file format.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\scripts\classify_polygon_local.py", line 29, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\scripts\classify_polygon_local.py", line 19, in main
+    classification = extract_local_sentinel_features(geometry, area_ha)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\demo_app\main.py", line 541, in extract_local_sentinel_features
+    with rasterio.open(tif_path) as src:
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Arij\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\rasterio\env.py", line 463, in wrapper
+    return f(*args, **kwds)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Arij\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\rasterio\__init__.py", line 368, in open
+    dataset = DatasetReader(path, driver=driver, sharing=sharing, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "rasterio/_base.pyx", line 313, in rasterio._base.DatasetBase.__init__
+rasterio.errors.RasterioIOError: 'C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\sentinel2_l2a\2025_05_06\demo\unknown__demo_1777743661_244542.tif' not recognized as being in a supported file format.
+If the job is not finished yet, the downloader skips it. Next check in 120 seconds.
+
+Download attempt 4/20
+
+$ C:\Users\Arij\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe scripts/download_openeo_results.py --manifest openeo_jobs_manifest_demo_1777795740_681951.json --output sentinel2_l2a/2025_05_06 --auth-method device --auth-timeout 1800 --no-browser
+Authenticated using refresh token.
+cdse-j-2605030809114d05b44f23c37ac9b5b9 finished demo__unknown__demo_1777795740_681951__2025__05_06__s2_l2a
+Already exists: sentinel2_l2a\2025_05_06\demo\unknown__demo_1777795740_681951.tif
+Exit code: 0
+Classification pending or failed: ERROR:root:Failed to load classification model 'C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\models\cultivation_classifier\random_forest.joblib': 118
+Traceback (most recent call last):
+  File "C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\demo_app\main.py", line 44, in <module>
+    model = joblib.load(MODEL_PATH)
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Arij\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\joblib\numpy_pickle.py", line 749, in load
+    obj = _unpickle(
+          ^^^^^^^^^^
+  File "C:\Users\Arij\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\joblib\numpy_pickle.py", line 626, in _unpickle
+    obj = unpickler.load()
+          ^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\pickle.py", line 1213, in load
+    dispatch[key[0]](self)
+    ~~~~~~~~^^^^^^^^
+KeyError: 118
+Traceback (most recent call last):
+  File "rasterio/_base.pyx", line 311, in rasterio._base.DatasetBase.__init__
+  File "rasterio/_base.pyx", line 222, in rasterio._base.open_dataset
+  File "rasterio/_err.pyx", line 359, in rasterio._err.exc_wrap_pointer
+rasterio._err.CPLE_OpenFailedError: 'C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\sentinel2_l2a\2025_05_06\demo\unknown__demo_1777743661_244542.tif' not recognized as being in a supported file format.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\scripts\classify_polygon_local.py", line 29, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\scripts\classify_polygon_local.py", line 19, in main
+    classification = extract_local_sentinel_features(geometry, area_ha)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\demo_app\main.py", line 541, in extract_local_sentinel_features
+    with rasterio.open(tif_path) as src:
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Arij\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\rasterio\env.py", line 463, in wrapper
+    return f(*args, **kwds)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Arij\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\rasterio\__init__.py", line 368, in open
+    dataset = DatasetReader(path, driver=driver, sharing=sharing, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "rasterio/_base.pyx", line 313, in rasterio._base.DatasetBase.__init__
+rasterio.errors.RasterioIOError: 'C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\sentinel2_l2a\2025_05_06\demo\unknown__demo_1777743661_244542.tif' not recognized as being in a supported file format.
+If the job is not finished yet, the downloader skips it. Next check in 120 seconds.
+
+Download attempt 5/20
+
+$ C:\Users\Arij\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe scripts/download_openeo_results.py --manifest openeo_jobs_manifest_demo_1777795740_681951.json --output sentinel2_l2a/2025_05_06 --auth-method device --auth-timeout 1800 --no-browser
+Authenticated using refresh token.
+cdse-j-2605030809114d05b44f23c37ac9b5b9 finished demo__unknown__demo_1777795740_681951__2025__05_06__s2_l2a
+Already exists: sentinel2_l2a\2025_05_06\demo\unknown__demo_1777795740_681951.tif
+Exit code: 0
+Classification pending or failed: ERROR:root:Failed to load classification model 'C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\models\cultivation_classifier\random_forest.joblib': 118
+Traceback (most recent call last):
+  File "C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\demo_app\main.py", line 44, in <module>
+    model = joblib.load(MODEL_PATH)
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Arij\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\joblib\numpy_pickle.py", line 749, in load
+    obj = _unpickle(
+          ^^^^^^^^^^
+  File "C:\Users\Arij\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\joblib\numpy_pickle.py", line 626, in _unpickle
+    obj = unpickler.load()
+          ^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\pickle.py", line 1213, in load
+    dispatch[key[0]](self)
+    ~~~~~~~~^^^^^^^^
+KeyError: 118
+Traceback (most recent call last):
+  File "rasterio/_base.pyx", line 311, in rasterio._base.DatasetBase.__init__
+  File "rasterio/_base.pyx", line 222, in rasterio._base.open_dataset
+  File "rasterio/_err.pyx", line 359, in rasterio._err.exc_wrap_pointer
+rasterio._err.CPLE_OpenFailedError: 'C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\sentinel2_l2a\2025_05_06\demo\unknown__demo_1777743661_244542.tif' not recognized as being in a supported file format.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\scripts\classify_polygon_local.py", line 29, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\scripts\classify_polygon_local.py", line 19, in main
+    classification = extract_local_sentinel_features(geometry, area_ha)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\demo_app\main.py", line 541, in extract_local_sentinel_features
+    with rasterio.open(tif_path) as src:
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Arij\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\rasterio\env.py", line 463, in wrapper
+    return f(*args, **kwds)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Arij\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\rasterio\__init__.py", line 368, in open
+    dataset = DatasetReader(path, driver=driver, sharing=sharing, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "rasterio/_base.pyx", line 313, in rasterio._base.DatasetBase.__init__
+rasterio.errors.RasterioIOError: 'C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\sentinel2_l2a\2025_05_06\demo\unknown__demo_1777743661_244542.tif' not recognized as being in a supported file format.
+If the job is not finished yet, the downloader skips it. Next check in 120 seconds.
+
+Download attempt 6/20
+
+$ C:\Users\Arij\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe scripts/download_openeo_results.py --manifest openeo_jobs_manifest_demo_1777795740_681951.json --output sentinel2_l2a/2025_05_06 --auth-method device --auth-timeout 1800 --no-browser
+Authenticated using refresh token.
+cdse-j-2605030809114d05b44f23c37ac9b5b9 finished demo__unknown__demo_1777795740_681951__2025__05_06__s2_l2a
+Already exists: sentinel2_l2a\2025_05_06\demo\unknown__demo_1777795740_681951.tif
+Exit code: 0
+Classification pending or failed: ERROR:root:Failed to load classification model 'C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\models\cultivation_classifier\random_forest.joblib': 118
+Traceback (most recent call last):
+  File "C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\demo_app\main.py", line 44, in <module>
+    model = joblib.load(MODEL_PATH)
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Arij\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\joblib\numpy_pickle.py", line 749, in load
+    obj = _unpickle(
+          ^^^^^^^^^^
+  File "C:\Users\Arij\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\joblib\numpy_pickle.py", line 626, in _unpickle
+    obj = unpickler.load()
+          ^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\pickle.py", line 1213, in load
+    dispatch[key[0]](self)
+    ~~~~~~~~^^^^^^^^
+KeyError: 118
+Traceback (most recent call last):
+  File "rasterio/_base.pyx", line 311, in rasterio._base.DatasetBase.__init__
+  File "rasterio/_base.pyx", line 222, in rasterio._base.open_dataset
+  File "rasterio/_err.pyx", line 359, in rasterio._err.exc_wrap_pointer
+rasterio._err.CPLE_OpenFailedError: 'C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\sentinel2_l2a\2025_05_06\demo\unknown__demo_1777743661_244542.tif' not recognized as being in a supported file format.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\scripts\classify_polygon_local.py", line 29, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\scripts\classify_polygon_local.py", line 19, in main
+    classification = extract_local_sentinel_features(geometry, area_ha)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\demo_app\main.py", line 541, in extract_local_sentinel_features
+    with rasterio.open(tif_path) as src:
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Arij\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\rasterio\env.py", line 463, in wrapper
+    return f(*args, **kwds)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Arij\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\rasterio\__init__.py", line 368, in open
+    dataset = DatasetReader(path, driver=driver, sharing=sharing, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "rasterio/_base.pyx", line 313, in rasterio._base.DatasetBase.__init__
+rasterio.errors.RasterioIOError: 'C:\Users\Arij\Desktop\1ING\hackaton\Classification-Cartographie-intelligente-des-oliveraies-tunisiennes\sentinel2_l2a\2025_05_06\demo\unknown__demo_1777743661_244542.tif' not recognized as being in a supported file format.
+If the job is not finished yet, the downloader skips it. Next check in 120 seconds.
+
+Download attempt 7/20
+
+$ C:\Users\Arij\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe scripts/download_openeo_results.py --manifest openeo_jobs_manifest_demo_1777795740_681951.json --output sentinel2_l2a/2025_05_06 --auth-method device --auth-timeout 1800 --no-browser
+Authenticated using refresh token.
+cdse-j-2605030809114d05b44f23c37ac9b5b9 finished demo__unknown__demo_1777795740_681951__2025__05_06__s2_l2a
+Already exists: sentinel2_l2a\2025_05_06\demo\unknown__demo_1777795740_681951.tif
+Exit code: 0
+Classification completed: {"label": "intensif", "confidence": 0.888, "prob_intensif": 0.888, "threshold_intensif": 0.2, "method": "local_sentinel2_random_forest", "image_path": "sentinel2_l2a\\2025_05_06\\demo\\unknown__demo_1777795740_681951.tif", "valid_pixel_count": 551458, "valid_pixel_ratio": 0.497, "note": "Prediction uses Sentinel-2 pixels from a local GeoTIFF and the trained Random Forest."}
+Workflow finished successfully.
